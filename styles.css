@@ -261,7 +261,7 @@ p {
 
 #sand-color-section {
     background-color: #ded2bc;
-    padding: 10vh 2vw;
+    padding: 10vh 10vw;
 }
 
 #vagone-info {
@@ -654,9 +654,19 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         width: 32%;
         height: 56vmin;
     }
+
+    #sand-color-section {
+        padding: 10vh 6vw;
+    }
 }
 
-@media (max-width: 992px) { /* Targets screens less than 1000px */
+@media (max-width: 1200px) {    
+    #sand-color-section {
+        padding: 10vh 2vw;
+    }
+}
+
+@media (max-width: 991px) { /* Targets screens less than 1000px */
     #first-page-content {
         margin-top: 4vh;
         margin-bottom: 4vh;
