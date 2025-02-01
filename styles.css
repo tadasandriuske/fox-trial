@@ -92,6 +92,7 @@ html, body {
     margin: 0 10px;
     color: #292929;
     text-decoration: none;
+    opacity: 0.95;
 }
 
 #social-media-header a:hover,
