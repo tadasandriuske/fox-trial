@@ -3,6 +3,7 @@ const leftArrow = document.getElementById("left-arrow");
 const rightArrow = document.getElementById("right-arrow");
 
 let autoMoveDirection = 1;  // 1 for forward, -1 for backward
+let autoMoveInterval;
 let isUserInteracting = false;  // To track if the user is interacting
 
 if (!track.dataset.percentage) {
@@ -22,45 +23,56 @@ const handleOnDown = (e) => {
 };
 
 const handleOnUp = () => {
-  track.dataset.mouseDownAt = "0";  
+  setTimeout(() => {
+    isUserInteracting = false;
+    clearInterval(autoMoveInterval); // Ensure no duplicate intervals
+    autoMoveInterval = setInterval(moveAutomatically, 3000); // Restart auto movement
+  }, 2000); // Delay before restarting auto movement
+
+  track.dataset.mouseDownAt = "0";
   track.dataset.prevPercentage = track.dataset.percentage;
 };
 
-const handleOnMove = e => {
 
-  let minLimit;
-  let speedModifier
+const handleOnMove = e => {
+  if (track.dataset.mouseDownAt === "0" || !track.dataset.mouseDownAt) return;
+
+  let minLimit, step, speedModifier;
   if (window.innerWidth <= 576) {
-    minLimit = -87.5;
-    speedModifier = 0.4;
+    minLimit = -714;
+    step = 102;
+    speedModifier = 0.3;
   } else if (window.innerWidth <= 992) {
-    minLimit = -75;
+    minLimit = -306;
+    step = 51;
     speedModifier = 0.8;
   } else if (window.innerWidth <= 1400) {
-    minLimit = -62.5;
-    speedModifier = 1.5;
+    minLimit = -170;
+    step = 34;
+    speedModifier = 1;
   } else {
-    minLimit = -50;
-    speedModifier = 2;
+    minLimit = -102;
+    step = 25.5;
+    speedModifier = 1.5;
   }
 
-
-  if (track.dataset.mouseDownAt === "0" || !track.dataset.mouseDownAt) return;
-  
   const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
   const maxDelta = window.innerWidth / speedModifier;
-  
   const percentage = (mouseDelta / maxDelta) * minLimit;
   const prevPercentage = parseFloat(track.dataset.prevPercentage) || 0;
-  const nextPercentage = Math.max(Math.min(prevPercentage + percentage, 0), minLimit);
+  let nextPercentage = Math.max(Math.min(prevPercentage + percentage, 0), minLimit);
+
+  // Snap to the nearest step
+  nextPercentage = Math.round(nextPercentage / step) * step;
 
   track.dataset.percentage = nextPercentage;
-  
-  track.style.transition = "transform 0.6s ease-out"; // Ensure smooth movement
+  usablePercentage = nextPercentage / (minLimit * -1) * 100;
+
+  track.style.transition = "transform 0.3s ease-out"; // Smooth movement
   track.style.transform = `translate(${nextPercentage}%, -50%)`;
 
   for (const image of track.getElementsByClassName("image")) {
-    image.style.objectPosition = `${100 + nextPercentage}% center`;
+    image.style.objectPosition = `${100 + usablePercentage}% center`;
   }
 
   updateArrowsVisibility(nextPercentage);
@@ -71,18 +83,22 @@ const moveAutomatically = () => {
   
   const maxLimit = 0;
   let minLimit;
+  let step;
 
   if (window.innerWidth <= 576) {
-    minLimit = -87.5;
+    step = 102;
+    minLimit = -714;
   } else if (window.innerWidth <= 992) {
-    minLimit = -75;
+    minLimit = -306;
+    step = 51;
   } else if (window.innerWidth <= 1400) {
-    minLimit = -62.5;
+    minLimit = -170;
+    step = 34;
   } else {
-    minLimit = -50;
+    minLimit = -102;
+    step = 25.5;
   }
 
-  const step = 12.5;  // Set the movement step to 12.6vw
   const currentPercentage = parseFloat(track.dataset.percentage) || 0;
   
   let nextPercentage = currentPercentage + (autoMoveDirection * step);
@@ -100,6 +116,9 @@ const moveAutomatically = () => {
   // Update arrow visibility based on current position
   updateArrowsVisibility(nextPercentage);
 
+  usablePercentage = nextPercentage / (minLimit*-1) * 100;
+
+
   // Apply transition with ease-in-out
   track.style.transition = "transform 1.2s ease-in-out"; 
   track.style.transform = `translate(${nextPercentage}%, -50%)`;
@@ -107,7 +126,7 @@ const moveAutomatically = () => {
   // Apply transition for images as well
   for (const image of track.getElementsByClassName("image")) {
     image.style.transition = "object-position 1.2s ease-in-out";
-    image.style.objectPosition = `${100 + nextPercentage}% center`;
+    image.style.objectPosition = `${100 + usablePercentage}% center`;
   }
 
   updateArrowsVisibility(nextPercentage);
@@ -119,13 +138,13 @@ const updateArrowsVisibility = (currentPercentage) => {
   let minLimit;
 
   if (window.innerWidth <= 576) {
-    minLimit = -87.5;
+    minLimit = -714;
   } else if (window.innerWidth <= 992) {
-    minLimit = -75;
+    minLimit = -306;
   } else if (window.innerWidth <= 1400) {
-    minLimit = -62.5;
+    minLimit = -170;
   } else {
-    minLimit = -50;
+    minLimit = -102;
   }
 
   if (currentPercentage >= maxLimit) {
@@ -144,7 +163,7 @@ const updateArrowsVisibility = (currentPercentage) => {
 // Initialize the move
 moveAutomatically();
 // Set interval for automatic movement
-const autoMoveInterval = setInterval(moveAutomatically, 3000); // Move every 3 seconds
+autoMoveInterval = setInterval(moveAutomatically, 3000); // Move every 3 seconds
 
 // Event listeners for touch and mouse
 track.onmousedown = e => handleOnDown(e);

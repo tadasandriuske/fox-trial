@@ -44,6 +44,15 @@ html, body {
     width: 100%;
 }
 
+#first-page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+}
+
 .col {
     padding: 0;
 }
@@ -99,6 +108,7 @@ html, body {
     overflow: hidden;
     margin-top: clamp(34.6px, calc(200px - var(--font-size-base) * 11), 68px);
     margin-bottom: clamp(43.25px, calc(200px - var(--font-size-base) * 11), 68px);
+    min-height: 35vh;
 }
 
 .video-background {
@@ -264,6 +274,27 @@ p {
     max-width: 755px;
 }
 
+#vagone-socials {
+    margin-bottom: 1vh;
+}
+
+#vagone-socials a {
+    margin: 0 10px;
+    color: #292929;
+    opacity: 0.95;
+    text-decoration: none;
+}
+
+#vagone-socials a:hover,
+#vagone-socials a:active {
+    color: #a55e45;
+}
+
+#vagone-socials a svg {
+    height: clamp(2.35rem, calc(var(--font-size-base) * 2.6), 2.6rem);
+    width: clamp(2.35rem, calc(var(--font-size-base) * 2.6), 2.6rem);
+}
+
 #founder {
     letter-spacing: 0.175rem;
     font-size: clamp(1.1rem, calc(var(--font-size-base) * 1.2), 1.2rem);
@@ -273,7 +304,7 @@ p {
     display: flex;
     align-items: center; 
     font-size: clamp(2.75rem, calc(var(--font-size-base) * 3), 3rem);
-    margin-bottom: 2vh;
+    margin-bottom: 1vh;
 }
 
 .e-dot-1 {
@@ -305,13 +336,12 @@ p {
     position: relative;
     height: 60vh;
     overflow: hidden;
+    width: 100%;
 }
 
 #image-track {
-    margin-left: 0.5vw;
-    margin-right: 1vw;
     display: flex;
-    gap: 2vw;
+    gap: 2%;
     position: absolute;
     left: 0;
     top: 50%;
@@ -321,15 +351,16 @@ p {
   }
 
 #image-track > .image {
-    width: 23vw;
+    width: 23.5%;
     height: 56vmin;
     object-fit: cover;
     object-position: 100% center;
 }
 
 #image-track > .last-image {
-margin-right: 2vw;
+    margin-right: 2vw;
 }
+
 .arrow {
     position: absolute;
     top: 50%;
@@ -620,7 +651,7 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
 @media (max-width: 1400px) {    
     #image-track > .image {
-        width: 31.25vw;
+        width: 32%;
         height: 56vmin;
     }
 }
@@ -654,12 +685,31 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     #image-track > .image {
-        width: 47.6vw;
+        width: 49%;
         height: 56vmin;
     }
 }
 
+@media (max-width: 810px) {
+    #first-page-text {
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+    }
+
+    #first-page-text .col {
+        max-width: 100%;
+    }
+  }
+
 @media (max-width: 767px) {
+    #first-page-content {
+        min-height: 30vh;
+    }
+
+    #first-page-text {
+        width: 72%;
+      }
 
     .name-column {
         padding-right: 0;
@@ -720,7 +770,11 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 
-@media (max-width: 576px) {
+@media (max-width: 575px) {
+    #first-page-text {
+        width: 100%;
+      }
+
     .name-column {
         padding-left: 0;
     }
@@ -730,17 +784,17 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     .brand-name {
-        font-size: clamp(16px, 16vw, 73.6px);
+        font-size: clamp(16px, 16vw, 68.8px);
     }
 
     #logo {
-        width: clamp(9px, 10vw, 46px);
-        height: clamp(10.695px, 11.76vw, 54.094px);
+        width: clamp(9px, 10vw, 43px);
+        height: clamp(10.695px, 11.76vw, 50.563px);
     }
 
     #experts {
-        font-size: clamp(3.815px, 3.5vw, 16.1px);
-        letter-spacing: clamp(1.092px, 1.2vw, 5.52px);
+        font-size: clamp(3.815px, 3.5vw, 15.05px);
+        letter-spacing: clamp(1.092px, 1.2vw, 5.16px);
     }
 
     #social-media-div {
@@ -749,8 +803,8 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     #social-media-header a svg {
-        height: clamp(18px, 10vw, 46px);
-        width: clamp(18px, 10vw, 46px);
+        height: clamp(18px, 10vw, 42.5px);
+        width: clamp(18px, 10vw, 42.5px);
     }
 
     #social-media-header a {
@@ -760,7 +814,6 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     #first-page-content {
         margin-top: 0;
         margin-bottom: 2vh;
-        min-height: 30vh;
     }
 
     .video-background {
@@ -768,7 +821,7 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     .title-text {
-        font-size: clamp(16px, 15vw, 69px);
+        font-size: clamp(16px, 15vw, 64.5px);
     }
     
     .title-text-top {
@@ -785,7 +838,7 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
     
     #dream {
-        font-size: clamp(16px, 20vw, 92px);
+        font-size: clamp(16px, 20vw, 86px);
     }
 
     .paragraph-title {
@@ -806,34 +859,38 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     #services-title {
-        font-size: clamp(16px, 10vw, 46px);
+        font-size: clamp(16px, 10vw, 43px);
     }
 
     #services-sub-text {
-        font-size: clamp(16px, 4.5vw, 20.7px);
+        font-size: clamp(16px, 4.5vw, 19.35px);
     }
 
     p {
-        font-size: clamp(16px, 4.25vw, 19.55px);
+        font-size: clamp(16px, 4.25vw, 18.275px);
     }
 
     #vagone-info-innner-container {
         width: 85%;
-        font-size: clamp(16px, 4.5vw, 20.7px);
+        font-size: clamp(16px, 4.5vw, 19.35px);
     }
 
     #founder {
-        letter-spacing: clamp(2.4px, 0.75vw, 3.45px);
-        font-size: clamp(16px, 4.5vw, 20.7px);
+        letter-spacing: clamp(2.4px, 0.75vw, 3.225px);
+        font-size: clamp(16px, 4.5vw, 19.35px);
     }
     
     #vagone-name {
-        font-size: clamp(38.4px, 12vw, 55.2px);
+        font-size: clamp(38.4px, 12vw, 51.6px);
     }
 
     .e-dot-1 {
-        font-size: clamp(38.4px, 12vw, 55.2px);
+        font-size: clamp(38.4px, 12vw, 51.6px);
         top:-55%; 
+    }
+
+    #vagone-socials a {
+        margin: 0 25px;
     }
 
     #vagone-image {
@@ -842,28 +899,28 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     #clients-title {
-        font-size: clamp(16px, 10vw, 46px);
+        font-size: clamp(16px, 10vw, 43px);
     }
 
     #clients-sub-text {
-        font-size: clamp(16px, 4.5vw, 20.7px);
+        font-size: clamp(16px, 4.5vw, 19.35px);
     }
 
     #image-track > .image {
-        width: 93vw;
+        width: 100%;
         height: auto;
     }
 
-    #image-track {
-        margin-left: 2vw;
+    #dark-brown-color-section {
+        margin-top: 0;
     }
-    
+
     #contact-title {
-        font-size: clamp(16px, 10vw, 46px);
+        font-size: clamp(16px, 10vw, 43px);
     }
 
     .person-card h3 {
-        font-size: clamp(16px, 4.5vw, 20.7px);
+        font-size: clamp(16px, 4.5vw, 19.35px);
     }
 
     .person-card {
@@ -880,36 +937,36 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     .e-dot-2 {
-        font-size: clamp(19.2px, 5vw, 23px);
+        font-size: clamp(19.2px, 5vw, 21.5px);
         top:-78%; 
     }
 
     .person-card p {
-        font-size: clamp(16px, 4.5vw, 20.7px);
+        font-size: clamp(16px, 4.5vw, 19.35px);
     }
 
     #contact-details {
-        font-size: clamp(16px, 4.7vw, 20.7px)
+        font-size: clamp(16px, 4.7vw, 20.21px)
     }
 
     #social-media a svg {
-        height: clamp(28.8px, 8vw, 44.8px);
-        width: clamp(28.8px, 8vw, 44.8px);
+        height: clamp(28.8px, 8vw, 34.4px);
+        width: clamp(28.8px, 8vw, 34.4px);
     }
     
     #social-media-whatsapp-icon {
-        height: clamp(36px, 10vw, 56px) !important;
-        width: clamp(36px, 10vw, 56px) !important;
+        height: clamp(36px, 10vw, 43px) !important;
+        width: clamp(36px, 10vw, 43px) !important;
     }
     
     #social-media-linkedin-icon {
-        height: clamp(29.95px, 8.32vw, 46.59px) !important;
-        width: clamp(29.95px, 8.32vw, 46.59px) !important;
+        height: clamp(29.95px, 8.32vw, 35.77px) !important;
+        width: clamp(29.95px, 8.32vw, 35.77px) !important;
     }
     
     #instagram-icon {
-        height: clamp(36px, 10vw, 56px) !important;
-        width: clamp(36px, 10vw, 56px) !important;
+        height: clamp(36px, 10vw, 43px) !important;
+        width: clamp(36px, 10vw, 43px) !important;
     }
 
     #social-media a {
@@ -917,15 +974,15 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     #operate-in {
-        font-size: clamp(16px, 4.7vw, 26.32px);
+        font-size: clamp(16px, 4.7vw, 20.21px);
     }
 
     #countries span {
-        font-size: clamp(16px, 4.5vw, 19.6px);
+        font-size: clamp(16px, 4.5vw, 19.35px);
     }
 
     #copyright {
-        font-size: clamp(16px, 4vw, 18.4px);
+        font-size: clamp(16px, 4vw, 17.2px);
         margin-bottom: 2vh;
     }
 }
