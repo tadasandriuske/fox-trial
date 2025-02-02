@@ -1,3 +1,7 @@
+if (navigator.userAgent.includes('FBAV') || navigator.userAgent.includes('WhatsApp')) {
+  window.open('https://github.com/tadasandriuske/fox-trial', '_blank'); // Opens the link in a new tab
+}
+
 const track = document.getElementById("image-track");
 const leftArrow = document.getElementById("left-arrow");
 const rightArrow = document.getElementById("right-arrow");
