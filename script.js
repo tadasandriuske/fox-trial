@@ -1,3 +1,11 @@
+if (navigator.userAgent.includes('FBAV')) {
+  const metaTag = document.createElement('meta');
+  metaTag.name = 'viewport';
+  metaTag.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+  document.head.appendChild(metaTag);
+}
+
+
 const track = document.getElementById("image-track");
 const leftArrow = document.getElementById("left-arrow");
 const rightArrow = document.getElementById("right-arrow");
