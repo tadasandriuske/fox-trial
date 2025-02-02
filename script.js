@@ -1,22 +1,3 @@
-function adjustViewportForMessenger() {
-  if (navigator.userAgent.includes('FBAV') || navigator.userAgent.includes('WhatsApp')) {
-      // Correcting the viewport width if it's wrong in the Messenger browser
-      const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth);
-      document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=' + viewportWidth + ', initial-scale=1.0');
-      
-      // Optionally trigger a reflow to force the browser to recalculate styles
-      document.body.style.display = 'none';
-      document.body.offsetHeight; // Trigger a reflow
-      document.body.style.display = '';
-  }
-}
-
-adjustViewportForMessenger();  // Call function to adjust on page load
-
-// Reapply when the window is resized (e.g., rotating the device)
-window.addEventListener('resize', adjustViewportForMessenger);
-
-
 const track = document.getElementById("image-track");
 const leftArrow = document.getElementById("left-arrow");
 const rightArrow = document.getElementById("right-arrow");
