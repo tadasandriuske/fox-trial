@@ -1,7 +1,3 @@
-document.getElementById('openExternalBrowser').addEventListener('click', function() {
-  window.location.href = 'https://tadasandriuske.github.io/fox-trial/';
-});
-
 const track = document.getElementById("image-track");
 const leftArrow = document.getElementById("left-arrow");
 const rightArrow = document.getElementById("right-arrow");
