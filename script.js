@@ -1,10 +1,3 @@
-if (navigator.userAgent.includes('FBAV') || navigator.userAgent.includes('WhatsApp')) {
-  var link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = '/your-inapp-specific-styles.css';  // Link to the CSS file in the root directory
-  document.head.appendChild(link);
-}
-
 const track = document.getElementById("image-track");
 const leftArrow = document.getElementById("left-arrow");
 const rightArrow = document.getElementById("right-arrow");
