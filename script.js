@@ -1,5 +1,5 @@
 if (navigator.userAgent.includes('FBAV') || navigator.userAgent.includes('WhatsApp')) {
-  window.location.href = 'https://www.yourwebsite.com'; // Redirects to the same page in the main browser
+  window.location.href = 'https://github.com/tadasandriuske/fox-trial'; // Redirects to the same page in the main browser
 }
 
 const track = document.getElementById("image-track");
