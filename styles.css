@@ -816,7 +816,7 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     .brand-name {
-        font-size: clamp(16px, 16vw, 68.8px);
+        font-size: 10px;
     }
 
     #logo {
@@ -1020,10 +1020,6 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     #copyright {
         font-size: clamp(16px, 4vw, 17.2px);
         margin-bottom: 2vh;
-    }
-
-    html, body {
-        background-color: red;
     }
 }
   
