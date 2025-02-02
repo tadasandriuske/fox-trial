@@ -1,5 +1,5 @@
 document.getElementById('openExternalBrowser').addEventListener('click', function() {
-  window.open('https://tadasandriuske.github.io/fox-trial/', '_blank');
+  window.location.href = 'https://tadasandriuske.github.io/fox-trial/';
 });
 
 const track = document.getElementById("image-track");
