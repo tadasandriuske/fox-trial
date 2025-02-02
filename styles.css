@@ -40,9 +40,13 @@ html, body {
     padding-right: 0;
 }
 
-.page-row {
+#page-row {
     height: 100%;
     width: 100%;
+}
+
+#page-row.messenger-browser {
+    display: none;
 }
 
 #first-page-container {
@@ -1024,133 +1028,7 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
 
 
-    body.messenger-browser .brand-name {
-        font-size: 30px;
-    }
 
-    body.messenger-browser #logo {
-        width: 37.5px;
-        height: 44.094px;
-    }
 
-    body.messenger-browser #experts {
-        font-size: 13.125px;
-        letter-spacing: 4.5px;
-    }
-
-    body.messenger-browser #social-media-header a svg {
-        height: 37.5px;
-        width: 37.5px;
-    }
-
-    body.messenger-browser .title-text {
-        font-size: 56.25px;
-    }
-    
-    body.messenger-browser #dream {
-        font-size: 75px;
-    }
-
-    body.messenger-browser #services-title {
-        font-size: 37.5px;
-    }
-
-    body.messenger-browser .service-card h3 {
-        font-size: 18.75px;
-    }
-
-    body.messenger-browser #services-sub-text {
-        font-size: 16.875px;
-    }
-
-    body.messenger-browser p {
-        font-size: 16px;
-    }
-
-    body.messenger-browser #vagone-info-innner-container {
-        width: 85%;
-        font-size: 16.875px;
-    }
-
-    body.messenger-browser #founder {
-        letter-spacing: 2.8125px;
-        font-size: 16.875px;
-    }
-    
-    body.messenger-browser #vagone-name {
-        font-size: 45px;
-    }
-
-    body.messenger-browser .e-dot-1 {
-        font-size: 45px;
-        top:-55%; 
-    }
-
-    body.messenger-browser #clients-title {
-        font-size: 37.5px;
-    }
-
-    body.messenger-browser #clients-sub-text {
-        font-size: 16.875px;
-    }
-
-    body.messenger-browser #contact-title {
-        font-size: 37.5px
-    }
-
-    body.messenger-browser .person-card h3 {
-        font-size: 16.875px;
-    }
-
-    body.messenger-browser .person-photo-div {
-        width: 98px;
-        height: 98px;
-    }
-
-    body.messenger-browser .e-dot-2 {
-        font-size: 19.2px;
-        top:-78%; 
-    }
-
-    body.messenger-browser .person-card p {
-        font-size: 16.875px;
-    }
-
-    body.messenger-browser #contact-details {
-        font-size: 17.625px;
-    }
-
-    body.messenger-browser #social-media a svg {
-        height: 30px;
-        width: 30px;
-    }
-    
-    body.messenger-browser #social-media-whatsapp-icon {
-        height: 37.5px !important;
-        width: 37.5px !important;
-    }
-    
-    body.messenger-browser #social-media-linkedin-icon {
-        height: 31.2px !important;
-        width: 31.2px !important;
-    }
-    
-    body.messenger-browser #instagram-icon {
-        height: 37.5px !important;
-        width: 37.5px !important;
-    }
-
-    body.messenger-browser #operate-in {
-        font-size: 17.625px;
-    }
-
-    body.messenger-browser #countries span {
-        font-size: 16.875px;
-    }
-
-    body.messenger-browser #copyright {
-        font-size: 16px;
-        margin-bottom: 2vh;
-    }
 }
   
