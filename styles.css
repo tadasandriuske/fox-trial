@@ -23,12 +23,6 @@ html, body {
     background-color: #F3F0E7;
     min-width: 320px;
     scroll-behavior: smooth;
-    text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -webkit-transform: scale(1);
-    transform: scale(1);
 }
 
 .container {
