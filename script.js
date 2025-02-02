@@ -1,11 +1,6 @@
-document.addEventListener("DOMContentLoaded", function () {
-  if (navigator.userAgent.includes("FB_IAB") || navigator.userAgent.includes("FBAV")) {
-    var pageRow = document.getElementById("page-row");
-    if (pageRow) {
-      pageRow.classList.add("messenger-browser");
-    }
-  }
-});
+if (navigator.userAgent.includes("FB_IAB") || navigator.userAgent.includes("FBAV")) {
+  document.body.classList.add("messenger-browser");
+}
 
 const track = document.getElementById("image-track");
 const leftArrow = document.getElementById("left-arrow");
