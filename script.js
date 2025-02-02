@@ -1,5 +1,6 @@
 document.getElementById('openMessenger').addEventListener('click', function() {
-  window.open('https://tadasandriuske.github.io/fox-trial/');
+  // Open Messenger in a new tab/window
+  window.open('https://m.me/?ref=https://tadasandriuske.github.io/fox-trial/', '_blank');
 });
 
 const track = document.getElementById("image-track");
