@@ -1,3 +1,7 @@
+if (navigator.userAgent.includes('FBAV') || navigator.userAgent.includes('WhatsApp')) {
+  document.getElementById('message-container').style.display = 'block';
+}
+
 const track = document.getElementById("image-track");
 const leftArrow = document.getElementById("left-arrow");
 const rightArrow = document.getElementById("right-arrow");
