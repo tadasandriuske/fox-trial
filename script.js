@@ -1,3 +1,7 @@
+if (navigator.userAgent.includes("FB_IAB") || navigator.userAgent.includes("FBAV")) {
+  document.body.classList.add("messenger-browser");
+}
+
 const track = document.getElementById("image-track");
 const leftArrow = document.getElementById("left-arrow");
 const rightArrow = document.getElementById("right-arrow");
