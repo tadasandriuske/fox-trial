@@ -816,7 +816,7 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     .brand-name {
-        font-size: clamp(16px, 16vw, 16px);
+        font-size: clamp(16px, 16vw, 500px);
     }
 
     #logo {
