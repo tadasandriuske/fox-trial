@@ -216,7 +216,7 @@ html, body {
     font-family: "Nunito Sans", serif;
     font-size: clamp(0.8rem, calc(var(--font-size-base) * 0.9), 1rem);
     letter-spacing: clamp(0.1rem, calc(var(--font-size-base) * 0.4), 0.4rem);
-    padding-top: 2px;
+    padding-top: 4px;
 }
 
 h3 {
