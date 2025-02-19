@@ -31,7 +31,18 @@
 <body>
     <div class="container d-flex align-items-center justify-content-center">
         <div class="page-row">
-          <div id="first-page-container">
+          <ul class="menu">
+            <li data-id="1"><span>Welcome</span><div class="circle-o"></div></li>
+            <li data-id="2"><span>Create With Us</span><div class="circle-o"></div></li>
+            <li data-id="3"><span>Corporate Events</span><div class="circle-o"></div></li>
+            <li data-id="4"><span>Private Events</span><div class="circle-o"></div></li>
+            <li data-id="5"><span>Consultations</span><div class="circle-o"></div></li>
+            <li data-id="6"><span>Founder</span><div class="circle-o"></div></li>
+            <li data-id="7"><span>Locations</span><div class="circle-o"></div></li>
+            <li data-id="8"><span>Clients</span><div class="circle-o"></div></li>
+            <li data-id="9"><span>Contact Us</span><div class="circle-o"></div></li>
+        </ul>
+          <div class="section section1" id="first-page-container">
             <div class="row" id="logo-socials-row">      
                 <div class="col-12 col-sm-7 name-column">
                     <div class="d-flex flex-column">
@@ -139,110 +150,227 @@
                   </div>
             </div>
           </div>
-          <div class="row photo-section" id="photo-section">
-            <div id="image-track" class="image-track" data-mouse-down-at="0" data-prev-percentage="0">
-              <img class="image" src="files/media/events/event-photo-9.jpg" draggable="false" />
-              <img class="image" src="files/media/events/event-photo-10.jpg" draggable="false" />
-              <img class="image" src="files/media/events/event-photo-11.jpg" draggable="false" />
-              <img class="image" src="files/media/events/event-photo-12.jpg" draggable="false" />
-              <img class="image" src="files/media/events/event-photo-13.jpg" draggable="false" />
-              <img class="image" src="files/media/events/event-photo-14.jpg" draggable="false" />
-              <img class="image" src="files/media/events/event-photo-15.jpg" draggable="false" />
-              <img class="image last-image" src="files/media/events/event-photo-16.jpg" draggable="false" />
+            <div class="row section section2" id="banner-text-section">
+              <div class="col-12 d-flex align-items-center justify-content-center banner-text">
+                <div class="stressed-text" id="banner-text">
+                  Your ideas, our expertise — let’s create an event that feels as unique as it is unforgettable.
+                  </div>
+              </div>
             </div>
-            <div id="left-arrow" class="arrow left-arrow"></div>
-            <div id="right-arrow" class="arrow right-arrow"></div>  
-        </div>
-            <div class="row" id="light-sand-color-section">
-                <div id="light-sand-inner-container">
-                <h1 class="stressed-text" id="services-title">OUR SERVICES</h1>
-                <p class="general-text" id="services-sub-text">At <span style="font-weight: bold;">Fox on Duty</span>, we specialize in creating unforgettable experiences for a wide range of events. Whether you are planning a corporate party or an intimate private celebration, we bring a personalized touch to every detail.</p>
-            
-                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 justify-content-center">
-                    <div class="col">
-                      <div class="service-card">
-                        <h3 class="stressed-text paragraph-title">Corporate Events <span style="font-family: 'serif'; font-weight: 100;">&</span> Company Parties</h3>
-                        <p class="general-text">
-                            Tailored solutions for team-building events, company anniversaries, and more, designed to engage and inspire your team.
-                        </p>
+
+            <div class="row" id="services-section">
+                <div id="services-section-inner">
+                  <div class="row service-section-row coorporate-events-row services-section-lefthand-row section section3">
+                  <div class="col-12 col-md-2 d-flex align-items-center justify-content-center services-section-lefthand-text-div">
+                    <div class="services-section-lefthand-text fade-in-left" id="coorporate-events-text">
+                      <div class="stressed-text services-section-title">Corporate Events</div>
+                      <div class="separator-line"></div>
+                      <p class="general-text services-section-text-description">
+                          Tailored solutions for team-building events, company anniversaries, and more, designed to engage and inspire your team.
+                      </p>
+                      <div class="col-12 d-flex align-items-start button-div">
+                      <button class="contact-button" onclick="scrollToContactSection()">Contact Us</button>
+                    </div>
+                    </div>
+                  </div>
+                  
+                  <div class="col-12 col-md-10 align-items-center justify-content-center flex-column services-section-lefthand-image-holder-div fade-in-right image-holder-mobile image-holder-pc">
+                    <div class="services-section-lefthand-image-holder">
+                    <img class="services-section-lefthand-image" src="files/media/stock/coorporate-events.png">
+                  </div>
+                  </div>
+                </div>
+
+                <div class="row service-section-row private-celebrations-row services-section-righthand-row section section4">
+                  <div class="col-12 col-md-10 align-items-center justify-content-center flex-column services-section-righthand-image-holder-div fade-in-left image-holder-pc">
+                    <div class="services-section-righthand-image-holder">
+                    <img class="services-section-righthand-image" src="files/media/stock/coorporate-events.png">
+                  </div>
+                  </div>
+
+                  <div class="col-12 col-md-2 d-flex align-items-center justify-content-center services-section-righthand-text-div">
+                    <div class="services-section-righthand-text fade-in-right" id="private-celebrations-text">
+                      <div class="stressed-text services-section-title">Private Celebrations</div>
+                      <div class="separator-line"></div>
+                      <p class="general-text services-section-text-description">
+                        From intimate birthday gatherings to grand weddings, we ensure that every moment is unforgettable. If you are planning a wedding, our dedicated wedding service, 
+                        Lapės Vestuvės, will take care of all the details.
+                      </p>
+                      <div class="col-12 d-flex align-items-start button-div">
+                        <button class="contact-button" onclick="redirectToLapesVestuves()">Learn More</button>
                       </div>
                     </div>
-    
-                    <div class="col">
-                        <div class="service-card">
-                          <h3 class="stressed-text paragraph-title">Private Celebrations <span style="font-family: 'serif'; font-weight: 100;">&</span> Weddings</h3>
-                          <p class="general-text">
-                            
-                            From intimate birthday gatherings to grand weddings, we ensure that every moment is unforgettable. If you are planning a wedding, our dedicated wedding service, 
-                            <span style="font-weight: bold;">Lapės Vestuvės</span>, will take care of all the details. Learn more at <a target="_blank" style="text-decoration: underline; color: inherit;" href="https://lapesvestuves.lt/" rel="nofollow">lapesvestuves.lt</a>
-                          </p>
-                        </div>
-                      </div>
-    
-                      <div class="col">
-                        <div class="service-card">
-                          <h3 class="stressed-text paragraph-title">Consultations</h3>
-                          <p class="general-text">
-                            Not sure where to start? We offer expert event planning consultations to guide you from concept to execution, making your vision a reality.
-                          </p>
-                        </div>
-                      </div>
+                  </div>
+                  
+                  <div class="col-12 col-md-10 align-items-center justify-content-center flex-column services-section-righthand-image-holder-div fade-in-left image-holder-mobile">
+                    <div class="services-section-righthand-image-holder">
+                    <img class="services-section-righthand-image" src="files/media/stock/coorporate-events.png">
+                  </div>
+                  </div>
+
                 </div>
+
+                <div class="row service-section-row consultations-row services-section-lefthand-row section section5">
+                  <div class="col-12 col-md-2 d-flex align-items-center justify-content-center services-section-lefthand-text-div">
+                    <div class="services-section-lefthand-text fade-in-left" id="consultations-text">
+                      <div class="stressed-text services-section-title">Consultations</div>
+                      <div class="separator-line"></div>
+                      <p class="general-text services-section-text-description">
+                        Not sure where to start? We offer expert event planning consultations to guide you from concept to execution, making your vision a reality.
+                      </p>
+                      <div class="col-12 d-flex align-items-start button-div">
+                        <button class="contact-button" onclick="scrollToContactSection()">Book Now</button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="col-12 col-md-10 align-items-center justify-content-center flex-column services-section-lefthand-image-holder-div fade-in-right image-holder-pc">
+                    <div class="services-section-lefthand-image-holder">
+                    <img class="services-section-lefthand-image" src="files/media/stock/coorporate-events.png">
+                  </div>
+                  </div>
+                </div>
+
+
             </div>    
             </div>
-            <div class="row" id="sand-color-section">
-                <div class="row row-cols-1 row-cols-sm-1 row-cols-lg-2 justify-content-center">
-                    <div class="col" id="vagone-info">
-                        <h5 class="general-text" id="founder">Founder and Lead Planner</h5>
-                        <h1 class="stressed-text" id="vagone-name">Laura Vagon<span style="position: relative;">e<span class="e-dot e-dot-1">&#46;</span></span></h1>
-                        <div id="vagone-socials">
-                          <a href="https://www.instagram.com/vagone9" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <g>
-                              <path fill="currentColor" d="M18.437,20.937H5.563a2.5,2.5,0,0,1-2.5-2.5V5.563a2.5,2.5,0,0,1,2.5-2.5H18.437a2.5,2.5,0,0,1,2.5,2.5V18.437A2.5,2.5,0,0,1,18.437,20.937ZM5.563,4.063a1.5,1.5,0,0,0-1.5,1.5V18.437a1.5,1.5,0,0,0,1.5,1.5H18.437a1.5,1.5,0,0,0,1.5-1.5V5.563a1.5,1.5,0,0,0-1.5-1.5Z"/>
-                              <path fill="currentColor" d="M12,16.594A4.595,4.595,0,1,1,16.6,12,4.6,4.6,0,0,1,12,16.594ZM12,8.4A3.595,3.595,0,1,0,15.6,12,3.6,3.6,0,0,0,12,8.4Z"/>
-                              <circle fill="currentColor" cx="17.2" cy="6.83" r="1.075"/>
-                            </g>
-                            </svg>
-                          </a>
-
-                          <a href="https://www.facebook.com/vagone" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <g>
-                              <path fill="currentColor" d="M19.02,4.975A9.93,9.93,0,0,0,2.07,12,9.935,9.935,0,0,0,12,21.935a9.98,9.98,0,0,0,3.8-.75,10.189,10.189,0,0,0,3.22-2.16,9.934,9.934,0,0,0,0-14.05Zm-.7,13.34A8.921,8.921,0,0,1,13,20.885v-6.56h1.88a1,1,0,0,0,0-2H13V9.585a1,1,0,0,1,1-1h1.2a1,1,0,0,0,0-2H13.5a2.5,2.5,0,0,0-2.5,2.5v3.24H9.13a1,1,0,1,0,0,2H11v6.56a8.919,8.919,0,1,1,9.26-5.47A9.061,9.061,0,0,1,18.32,18.315Z"/>
-                            </g>
-                            </svg>
-                          </a>
-
-                          <a href="https://www.linkedin.com/in/laura-vagone-967b63191" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <g id="LinkedIn">
-                              <g>
-                                <path fill="currentColor" d="M18.44,3.06H5.56a2.507,2.507,0,0,0-2.5,2.5V18.44a2.507,2.507,0,0,0,2.5,2.5H18.44a2.5,2.5,0,0,0,2.5-2.5V5.56A2.5,2.5,0,0,0,18.44,3.06Zm1.5,15.38a1.511,1.511,0,0,1-1.5,1.5H5.56a1.511,1.511,0,0,1-1.5-1.5V5.56a1.511,1.511,0,0,1,1.5-1.5H18.44a1.511,1.511,0,0,1,1.5,1.5Z"/>
-                                <g>
-                                  <path fill="currentColor" d="M6.376,10.748a1,1,0,1,1,2,0v6.5h0a1,1,0,0,1-2,0Z"/>
-                                  <circle fill="currentColor" cx="7.376" cy="6.744" r="1"/>
-                                  <path fill="currentColor" d="M17.62,13.37v3.88a1,1,0,1,1-2,0V13.37a1.615,1.615,0,1,0-3.23,0v3.88a1,1,0,0,1-2,0v-6.5a1.016,1.016,0,0,1,1-1,.94.94,0,0,1,.84.47,3.609,3.609,0,0,1,5.39,3.15Z"/>
-                                </g>
-                              </g>
-                            </g>
-                            </svg>
-                          </a>
-
-
-
-
-
-                        </div>
-                        <p class="general-text" id="vagone-info-innner-container">
-                            Born in the small town of Jurbarkas, Laura Vagonė combines creativity and management skills honed through diverse work experiences, extensive travel, and a passion for reading. She brings a calm and reassuring presence, even in the most challenging moments. Laura is guiding principles include creating events as if for herself.
-                            <br><br>Now based in Vilnius, Laura enjoys reading, practising yoga, running, attending concerts and exhibitions, and savoring delicious food paired with wine and digestivo Espresso Martini.
-                        </p>
+            <div class="row section section6" id="sand-color-section">
+                <div class="row d-flex justify-content-center align-items-center">
+                  <div class="col-12 d-flex justify-content-center align-items-center flex-column" id="vagone-name-div">
+                    <h5 class="general-text" id="founder">Founder and Lead Planner</h5>
+                    <h1 class="stressed-text" id="vagone-name">Laura Vagonė</h1>
+                  </div>
+                    <div class="col-12 col-lg-4 align-items-center justify-content-center flex-column" id="quote-div">
+                      <div id="vagone-quote" class="stressed-text">In event planning, the word 'impossible' is just the beginning of a great story.</div>
                     </div>
-                    <div class="col" id="vagone-photo-div">
+                    <div class="col-12 col-md-5 col-lg-4 justify-content-center align-items-center flex-column" id="vagone-photo-div">
                       <img src="files/media/organizers/laura-vagone.png" alt="Laura Vagonė" id="vagone-image">
+                      <div id="vagone-socials">
+                        <a href="https://www.instagram.com/vagone9" target="_blank" rel="noopener"><svg id="vagone-instagram-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
+                          <path fill="currentColor" d="m8.00004 1.33334c1.81133 0 2.03736.00667 2.74796.04.71.03334 1.1934.14467 1.6187.31.44.16934.8107.39867 1.1813.76867.339.33326.6013.73639.7687 1.18133.1647.42467.2767.90867.31 1.61867.0313.71067.04.93667.04 2.748s-.0067 2.03729-.04 2.74799c-.0333.71-.1453 1.1933-.31 1.6187-.1669.4452-.4292.8484-.7687 1.1813-.3333.3389-.7364.6012-1.1813.7687-.4247.1646-.9087.2766-1.6187.31-.7106.0313-.93663.04-2.74796.04s-2.03733-.0067-2.748-.04c-.71-.0334-1.19333-.1454-1.61867-.31-.44511-.167-.84831-.4294-1.18133-.7687-.33906-.3332-.60138-.7363-.76867-1.1813-.16533-.4247-.27666-.9087-.31-1.6187-.03133-.7107-.04-.93666-.04-2.74799s.00667-2.03733.04-2.748c.03334-.71067.14467-1.19333.31-1.61867.16683-.44521.42921-.84845.76867-1.18133.33311-.33918.73629-.60151 1.18133-.76867.42534-.16533.908-.27666 1.61867-.31.71067-.03133.93667-.04 2.748-.04zm0 3.33334c-.88405 0-1.7319.35119-2.35702.97631s-.97631 1.47296-.97631 2.35702c0 .88405.35119 1.7319.97631 2.35699.62512.6252 1.47297.9763 2.35702.9763.88406 0 1.7319-.3511 2.35706-.9763.6251-.62509.9763-1.47294.9763-2.35699 0-.88406-.3512-1.7319-.9763-2.35702-.62516-.62512-1.473-.97631-2.35706-.97631zm4.33336-.16667c0-.22101-.0878-.43298-.2441-.58926s-.3682-.24407-.5893-.24407c-.221 0-.4329.08779-.5892.24407s-.2441.36825-.2441.58926.0878.43298.2441.58926.3682.24407.5892.24407c.2211 0 .433-.08779.5893-.24407s.2441-.36825.2441-.58926zm-4.33336 1.5c.53043 0 1.03914.21071 1.41421.58579.37508.37507.58575.88378.58575 1.41421s-.21067 1.03914-.58575 1.41421c-.37507.37508-.88378.58578-1.41421.58578s-1.03914-.2107-1.41421-.58578c-.37508-.37507-.58579-.88378-.58579-1.41421s.21071-1.03914.58579-1.41421c.37507-.37508.88378-.58579 1.41421-.58579z" fill="#001018"/>
+                        </svg>
+                        </a>
+  
+                        <a href="https://www.facebook.com/vagone" target="_blank" rel="noopener"><svg id="vagone-facebook-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <path fill="currentColor" d="M24 12.0726C24 5.44354 18.629 0.0725708 12 0.0725708C5.37097 0.0725708 0 5.44354 0 12.0726C0 18.0619 4.38823 23.0264 10.125 23.9274V15.5414H7.07661V12.0726H10.125V9.4287C10.125 6.42144 11.9153 4.76031 14.6574 4.76031C15.9706 4.76031 17.3439 4.99451 17.3439 4.99451V7.94612H15.8303C14.34 7.94612 13.875 8.87128 13.875 9.82015V12.0726H17.2031L16.6708 15.5414H13.875V23.9274C19.6118 23.0264 24 18.0619 24 12.0726Z"></path>
+                          </svg>
+                        </a>
+  
+                        <a href="https://www.linkedin.com/in/laura-vagone-967b63191" target="_blank" rel="noopener"><svg id="vagone-linkedin-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <path fill="currentColor" d="M5.37214 23.9997H0.396429V7.97649H5.37214V23.9997ZM2.88161 5.79078C1.29054 5.79078 0 4.47292 0 2.88185C1.13882e-08 2.1176 0.303597 1.38465 0.844003 0.844247C1.38441 0.303841 2.11736 0.000244141 2.88161 0.000244141C3.64586 0.000244141 4.3788 0.303841 4.91921 0.844247C5.45962 1.38465 5.76321 2.1176 5.76321 2.88185C5.76321 4.47292 4.47214 5.79078 2.88161 5.79078ZM23.9946 23.9997H19.0296V16.1997C19.0296 14.3408 18.9921 11.9569 16.4427 11.9569C13.8557 11.9569 13.4593 13.9765 13.4593 16.0658V23.9997H8.48893V7.97649H13.2611V10.1622H13.3307C13.995 8.90328 15.6177 7.57471 18.0386 7.57471C23.0743 7.57471 24 10.8908 24 15.1979V23.9997H23.9946Z"></path>
+                          </svg>
+                        </a>
+                      </div>
                     </div>
+
+                    <div class="col-12 col-md-5 col-lg-4  d-flex justify-content-center align-items-center flex-column" id="vagone-info">
+                      <div class="col-12 align-items-center justify-content-center flex-column" id="quote-div-mobile">
+                        <div id="vagone-quote" class="stressed-text">In event planning, the word “impossible” is just the beginning of a great story.</div>
+                      </div>
+                      <p class="general-text" id="vagone-info-inner-container">
+                        Born in the small town of Jurbarkas, Laura Vagonė combines creativity and management skills honed through diverse work experiences, extensive travel, and a passion for reading. She brings a calm and reassuring presence, even in the most challenging moments. Laura is guiding principles include creating events as if for herself.
+                        <br><br>Now based in Vilnius, Laura enjoys reading, practising yoga, running, attending concerts and exhibitions, and savoring delicious food paired with wine and digestivo Espresso Martini.
+                    </p>
+                      </div>
             </div>
             </div>
 
-            <div class="row" id="clients-section">
+            <div class="row section section7" id="locations-section">
+              <div id="locations-inner-container">
+                <div id="countries-slider-wrapper">
+                  <div class="slider-nav-wrapper">
+                      <div class="icon"><i id="left" class="slider-nav"><div class="backward-arrow"></div></i></div>
+                      <ul class="tabs-box">
+                          <li class="tab  active" data-tab="ITALY">ITALY</li>
+                          <li class="tab" data-tab="SPAIN">SPAIN</li>
+                          <li class="tab" data-tab="FRANCE">FRANCE</li>
+                          <li class="tab" data-tab="LITHUANIA">LITHUANIA</li>
+                          <li class="tab" data-tab="PORTUGAL">PORTUGAL</li>
+                          <li class="tab" data-tab="SWITZERLAND">SWITZERLAND</li>
+                          <li class="tab" data-tab="AUSTRIA">AUSTRIA</li>
+                      </ul>
+                      <div class="icon"><i id="right" class="slider-nav"><div class="forward-arrow"></div></i></div>
+                  </div>
+              
+                  <!-- Content for each tab -->
+                   <div class="outer-content-window">
+                  <div class="content-window">
+                      <div class="tab-content active" id="ITALY">
+                        <div class="row">
+                          <div class="col-md-6 col-12">
+                            <div class="countries-slider-template-container">
+                              <div class="country-name stressed-text">ITALY</div>
+                              <div class="separator-line"></div>
+                              <div class="country-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida luctus lorem, eget gravida mauris auctor eu. Ut in dictum libero. Proin eget enim ac tortor accumsan vehicula quis sit amet erat. Curabitur rutrum, sem consequat vehicula rutrum, erat risus interdum nibh, ut rhoncus mauris leo at nibh. Quisque quis.</div>
+                          </div>
+                          </div>
+                          <div class="col-md-6 col-12 country-carousel-div">
+                            <div id="carousel-italy" class="carousel country-carousel slide" data-ride="carousel">
+                              <ol class="carousel-indicators">
+                                <li data-target="#carousel-italy" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-italy" data-slide-to="1"></li>
+                                <li data-target="#carousel-italy" data-slide-to="2"></li>
+                              </ol>
+                              <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                  <img class="d-block" src="files/media/stock/italy-1.png" alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                  <img class="d-block" src="files/media/stock/italy-2.png" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                  <img class="d-block" src="files/media/stock/italy-3.png" alt="Third slide">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="tab-content" id="SPAIN">
+                          <div class="countries-slider-template-container">
+                              <div class="country-name">SPAIN</div>
+                              <p>Explore the world of JavaScript programming.</p>
+                          </div>
+                      </div>
+                      <div class="tab-content" id="FRANCE">
+                          <div class="countries-slider-template-container">
+                              <div class="country-name">FRANCE</div>
+                              <p>Listen to the latest tech podcasts.</p>
+                          </div>
+                      </div>
+                      <div class="tab-content" id="LITHUANIA">
+                          <div class="countries-slider-template-container">
+                              <div class="country-name">LITHUANIA</div>
+                              <p>Understand how databases work and their importance.</p>
+                          </div>
+                      </div>
+                      <div class="tab-content" id="PORTUGAL">
+                          <div class="countries-slider-template-container">
+                              <div class="country-name">PORTUGAL</div>
+                              <p>Master the art of building modern websites.</p>
+                          </div>
+                      </div>
+                      <div class="tab-content" id="SWITZERLAND">
+                          <div class="countries-slider-template-container">
+                              <div class="country-name">SWITZERLAND</div>
+                              <p>Watch unboxing videos of the latest gadgets.</p>
+                          </div>
+                      </div>
+                      <div class="tab-content" id="AUSTRIA">
+                          <div class="countries-slider-template-container">
+                              <div class="country-name">AUSTRIA</div>
+                              <p>Dive into the history of technology and innovation.</p>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            </div>
+
+            <div class="row section section8" id="clients-section">
               <div id="clients-inner-container">
               <h1 class="stressed-text" id="clients-title">OUR CLIENTS</h1>
               <p class="general-text" id="clients-sub-text">We take pride in collaborating with leading brands and companies whose trust is a testament to our expertise and quality. Together, we implement innovative solutions that contribute to their success and growth.</p>
@@ -286,24 +414,66 @@
             </div>
 
             </div>
+
+            <div id="instagram-widget">
+
+              <div class="instagram-header-container">
+                <div class="instagram-header">
+                        <div class="instagram-header-user">
+                                <div class="instagram-header-user-picture-wrapper">
+                                    <a href="https://www.instagram.com/fox_on_duty/" title="@fox_on_duty" target="_blank" rel="noopener noreferrer nofollow">
+                                        <img link="profilePicture" class="instagram-header-user-picture" src="files/media/logos/FoxOnDuty_icon_instagram.png" alt="fox_on_duty">
+                                    </a>
+                                </div>
+                                <div class="instagram-header-user-info">
+                                      <div class="instagram-header-user-info-name">
+                                          <a href="https://www.instagram.com/fox_on_duty/" title="@fox_on_duty" target="_blank" rel="noopener noreferrer nofollow">
+                                              <div class="instagram-header-user-full-name">Fox on Duty</div>
+                                          </a>
+                                          <div class="instagram-header-user-info-verified-badge" title="Verified">
+                                              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                  <path d="M5.79131 0.202079C5.90764 0.0894369 6.09236 0.0894369 6.20869 0.202079L7.15665 1.12C7.23117 1.19217 7.33769 1.22071 7.43831 1.19547L8.71823 0.874508C8.87529 0.835121 9.03527 0.927484 9.07969 1.0832L9.44168 2.35212C9.47014 2.45188 9.54812 2.52986 9.64788 2.55831L10.9168 2.92031C11.0725 2.96473 11.1649 3.12471 11.1255 3.28177L10.8045 4.56169C10.7793 4.66231 10.8078 4.76883 10.88 4.84335L11.7979 5.79131C11.9106 5.90764 11.9106 6.09236 11.7979 6.20869L10.88 7.15665C10.8078 7.23117 10.7793 7.33769 10.8045 7.43831L11.1255 8.71823C11.1649 8.87529 11.0725 9.03527 10.9168 9.07969L9.64788 9.44168C9.54812 9.47014 9.47014 9.54812 9.44168 9.64788L9.07969 10.9168C9.03527 11.0725 8.87529 11.1649 8.71823 11.1255L7.43831 10.8045C7.33769 10.7793 7.23117 10.8078 7.15665 10.88L6.20869 11.7979C6.09236 11.9106 5.90764 11.9106 5.79131 11.7979L4.84335 10.88C4.76883 10.8078 4.66231 10.7793 4.56169 10.8045L3.28177 11.1255C3.12471 11.1649 2.96473 11.0725 2.92031 10.9168L2.55831 9.64788C2.52986 9.54812 2.45188 9.47014 2.35212 9.44168L1.0832 9.07969C0.927484 9.03527 0.835121 8.87529 0.874508 8.71823L1.19547 7.43831C1.22071 7.33769 1.19217 7.23117 1.12 7.15665L0.202079 6.20869C0.0894369 6.09236 0.0894369 5.90764 0.202079 5.79131L1.12 4.84335C1.19217 4.76883 1.22071 4.66231 1.19547 4.56169L0.874508 3.28177C0.835121 3.12471 0.927484 2.96473 1.0832 2.92031L2.35212 2.55831C2.45188 2.52986 2.52986 2.45188 2.55831 2.35212L2.92031 1.0832C2.96473 0.927484 3.12471 0.835121 3.28177 0.874508L4.56169 1.19547C4.66231 1.22071 4.76883 1.19217 4.84335 1.12L5.79131 0.202079Z" fill="#0095F6"></path>
+                                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M7.76998 4.15662C7.98274 3.94779 8.32768 3.94779 8.54043 4.15662C8.73682 4.34938 8.75193 4.6527 8.58575 4.86247L8.54043 4.91284L5.55476 7.84338C5.35837 8.03614 5.04935 8.05097 4.83563 7.88786L4.78431 7.84338L3.35957 6.534C3.14681 6.32518 3.14681 5.9866 3.35957 5.77778C3.55596 5.58502 3.86498 5.57019 4.0787 5.73329L4.13002 5.77778L5.16953 6.70863L7.76998 4.15662Z" fill="white"></path>
+                                              </svg>
+                                          </div>
+                                    </div>
+                                    <div class="instagram-header-user-info-caption">
+                                        <a href="https://www.instagram.com/fox_on_duty/" title="@fox_on_duty" target="_blank" rel="noopener noreferrer nofollow">
+                                            <div class="instagram-header-user-username">@fox_on_duty</div>
+                                        </a>
+                                    </div>
+                                </div>
+                        </div>
+  
+                        <div class="instagram-header-follow-button-wrapper">
+                            <a class="instagram-header-follow-button" href="https://www.instagram.com/fox_on_duty/" target="_blank" rel="noopener noreferrer nofollow">
+                                <svg class="instagram-header-follow-button-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.245 2.00046C14.2283 2.00292 14.7561 2.00941 15.2163 2.02313L15.4105 2.02946C15.6348 2.03738 15.8561 2.04722 16.1228 2.05939C17.1872 2.10794 17.9141 2.27701 18.5502 2.52424C19.2079 2.77976 19.7656 3.12171 20.3215 3.67766C20.8775 4.23365 21.2194 4.79135 21.475 5.44897C21.7222 6.08506 21.8913 6.81203 21.9398 7.87645C21.9815 8.79072 21.996 9.17154 21.9992 10.972V13.0272C21.996 14.8277 21.9815 15.2085 21.9398 16.1227C21.8913 17.1872 21.7222 17.9141 21.475 18.5502C21.2194 19.2078 20.8775 19.7655 20.3215 20.3215C19.7656 20.8775 19.2079 21.2194 18.5502 21.475C17.9141 21.7222 17.1872 21.8913 16.1228 21.9398C15.2085 21.9815 14.8277 21.9959 13.0272 21.9992H10.972C9.17155 21.9959 8.79073 21.9815 7.87646 21.9398C6.81204 21.8913 6.08507 21.7222 5.44897 21.475C4.79136 21.2194 4.23366 20.8775 3.67767 20.3215C3.12172 19.7655 2.77977 19.2078 2.52425 18.5502C2.27702 17.9141 2.10795 17.1872 2.0594 16.1227C2.04723 15.8561 2.03739 15.6348 2.02946 15.4104L2.02313 15.2162C2.00942 14.7561 2.00293 14.2282 2.00047 13.245V10.7542C2.00293 9.77097 2.00942 9.24311 2.02313 8.78295L2.02946 8.58876C2.03739 8.3644 2.04723 8.14311 2.0594 7.87645C2.10795 6.81203 2.27702 6.08506 2.52425 5.44897C2.77977 4.79135 3.12172 4.23365 3.67767 3.67766C4.23366 3.12171 4.79136 2.77976 5.44897 2.52424C6.08507 2.27701 6.81204 2.10794 7.87646 2.05939C8.14312 2.04722 8.36441 2.03738 8.58877 2.02946L8.78296 2.02313C9.24312 2.00941 9.77098 2.00292 10.7542 2.00046H13.245ZM13.0414 3.80184H10.9578C9.21948 3.80493 8.85687 3.81841 7.95859 3.85939C6.98357 3.90385 6.45405 4.06677 6.10167 4.20372C5.63487 4.38514 5.30174 4.60184 4.95181 4.9518C4.60185 5.30173 4.38514 5.63486 4.20373 6.10166C4.06678 6.45404 3.90386 6.98356 3.8594 7.95858C3.81842 8.85686 3.80494 9.21947 3.80185 10.9578V13.0414C3.80494 14.7797 3.81842 15.1423 3.8594 16.0406C3.90386 17.0156 4.06678 17.5452 4.20373 17.8975C4.38514 18.3643 4.60189 18.6975 4.95181 19.0474C5.30174 19.3974 5.63487 19.6141 6.10167 19.7955C6.45405 19.9324 6.98357 20.0953 7.95859 20.1398C8.85677 20.1808 9.2193 20.1943 10.9577 20.1974L11.4437 20.1979C11.6169 20.1981 11.8018 20.1981 11.9996 20.1981L12.2868 20.1981C12.3794 20.198 12.4689 20.198 12.5556 20.1979L13.0415 20.1974C14.2508 20.1952 14.7944 20.188 15.3155 20.1701L15.5112 20.1628C15.6754 20.1563 15.8454 20.1487 16.0406 20.1398C17.0157 20.0953 17.5452 19.9324 17.8976 19.7955C18.3643 19.6141 18.6975 19.3974 19.0474 19.0474C19.3974 18.6975 19.6141 18.3643 19.7955 17.8975C19.9324 17.5452 20.0954 17.0156 20.1398 16.0406C20.1487 15.8453 20.1563 15.6754 20.1628 15.5111L20.1701 15.3154C20.188 14.7942 20.1952 14.2507 20.1974 13.0414L20.198 12.5555C20.1981 12.3823 20.1981 12.1974 20.1981 11.9996L20.1981 11.7125C20.1981 11.6199 20.198 11.5303 20.198 11.4437L20.1974 10.9578C20.1943 9.21947 20.1808 8.85686 20.1398 7.95858C20.0954 6.98356 19.9324 6.45404 19.7955 6.10166C19.6141 5.63486 19.3974 5.30173 19.0474 4.9518C18.6975 4.60184 18.3643 4.38514 17.8976 4.20372C17.5452 4.06677 17.0157 3.90385 16.0406 3.85939C15.1423 3.81841 14.7797 3.80493 13.0414 3.80184ZM11.9996 6.86427C14.8358 6.86427 17.1349 9.16342 17.1349 11.9996C17.1349 14.8358 14.8358 17.1349 11.9996 17.1349C9.16343 17.1349 6.86428 14.8358 6.86428 11.9996C6.86428 9.16342 9.16343 6.86427 11.9996 6.86427ZM11.9996 8.66614C10.1586 8.66614 8.66615 10.1586 8.66615 11.9996C8.66615 13.8406 10.1586 15.3331 11.9996 15.3331C13.8406 15.3331 15.3331 13.8406 15.3331 11.9996C15.3331 10.1586 13.8406 8.66614 11.9996 8.66614ZM17.3378 5.46131C18.0006 5.46131 18.5379 5.9986 18.5379 6.66138C18.5379 7.32415 18.0006 7.86141 17.3378 7.86141C16.6751 7.86141 16.1378 7.32415 16.1378 6.66138C16.1378 5.9986 16.6751 5.46131 17.3378 5.46131Z"></path>
+                                </svg>
+                                <div class="instagram-header-follow-button-label">Follow</div>
+                            </a>
+                        </div>
+                      </div>
+            </div>
+  
+              <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+                <div class="instagram-carousel-inner"></div>
+                <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+  
             </div>
 
-            <div class="row photo-section" id="photo-section2">
-              <div id="image-track2" class="image-track" data-mouse-down-at="0" data-prev-percentage="0">
-                <img class="image" src="files/media/events/event-photo-2.jpg" draggable="false" />
-                <img class="image" src="files/media/events/event-photo-1.jpg" draggable="false" />
-                <img class="image" src="files/media/events/event-photo-3.jpg" draggable="false" />
-                <img class="image" src="files/media/events/event-photo-7.jpg" draggable="false" />
-                <img class="image" src="files/media/events/event-photo-4.jpg" draggable="false" />
-                <img class="image" src="files/media/events/event-photo-5.jpg" draggable="false" />
-                <img class="image" src="files/media/events/event-photo-6.jpg" draggable="false" />
-                <img class="image last-image" src="files/media/events/event-photo-8.jpg" draggable="false" />  
-              </div>
-              <div id="left-arrow2" class="arrow left-arrow"></div>
-              <div id="right-arrow2" class="arrow right-arrow"></div>  
-          </div>
 
-            <div class="row" id="dark-brown-color-section">
+            </div>
+
+            <div class="row section section9" id="contact-section">
               <div id="contact-inner-container">
                 <h1 class="stressed-text" id="contact-title">CONTACT US</h1>
                 <div class="row">
@@ -316,7 +486,7 @@
                                       <img src="files/media/organizers/laura-vagone-2.png" alt="Laura Vagone" class="person-photo-1">
                                   </div>
                                   <div class="person-description vagone-contact-info">
-                                  <h3 class="stressed-text">Laura Vagon<span style="position: relative;">e<span class="e-dot e-dot-2">&#46;</span></h3>
+                                  <h3 class="stressed-text">Laura Vagonė</h3>
                                   <p class="general-text">Head of Creative</p>
                                 </div>
                               </div>
@@ -338,10 +508,10 @@
                   <!-- Second Column -->
                   <div class="col-md-6 col-12 contact-info-column">
                     <div id="contact-inner-div">
-                    <div id="contact-details">
-                      <div><span style="font-weight: bold;">Email</span>: <a style="text-decoration: underline; color: inherit;" href="mailto:events@foxonduty.lt" rel="nofollow">events@foxonduty.lt</a></div>
-                      <div>
-                        <span style="font-weight: bold;">Mobile number</span>: +370 699 95 171
+                    <div class="allow-select" id="contact-details">
+                      <div class="allow-select"><span class="allow-select" style="font-weight: bold;">Email</span>: <a class="allow-select" style="text-decoration: underline; color: inherit;" href="mailto:events@foxonduty.lt" rel="nofollow">events@foxonduty.lt</a></div>
+                      <div class="allow-select">
+                        <span class="allow-select" style="font-weight: bold;">Mobile number</span>: +370 699 95 171
                       </div>
                     </div>
                     <div id="social-media">
