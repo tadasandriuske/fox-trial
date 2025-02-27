@@ -145,6 +145,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.scrollY > 100) {
         progressWrap.classList.add("active-progress");
     } else {
+        if (menuBtn.dataset.state === "x") {
+          toggleMenuBtn();
+        }
         progressWrap.classList.remove("active-progress");
         if (mobileSectionMenu.classList.contains("active")) {
           mobileSectionMenu.classList.remove("active");
