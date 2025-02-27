@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // progress tracker start
 
-document.addEventListener("DOMContentLoaded", function () {
+function handlePCEventTracker() {
+  if (window.innerWidth > 768) {
     const sections = document.querySelectorAll(".section");
     const menuItems = document.querySelectorAll(".menu li");
     const menu = document.querySelector(".menu");
-    let isMenuOpen = false; // Track if the menu is open on mobile
   
 // Function to update the active menu item based on scroll position
 function updateActiveMenu() {
@@ -83,61 +83,129 @@ function updateActiveMenu() {
             top: targetScrollPosition,
             behavior: "smooth"
         });
-  
-        if (window.innerWidth <= 768) {
-            toggleMenuTextVisibility();
-        }
-    }
-  
-    // Function to toggle text visibility on mobile
-    function toggleMenuTextVisibility() {
-        isMenuOpen = !isMenuOpen;
-        menuItems.forEach(item => {
-            item.classList.toggle("active", isMenuOpen);
-        });
     }
   
     // Add event listeners for menu items
     menuItems.forEach((menuItem, index) => {
         menuItem.addEventListener("click", function (e) {
-            if (window.innerWidth <= 768) { // Check if it's a mobile device
-                if (isMenuOpen) {
-                    handleMenuItemClick(index);
-                } else {
-                    toggleMenuTextVisibility();
-                }
-            } else {
                 handleMenuItemClick(index);
-            }
         });
     });
   
-    // Close the menu when clicking outside on mobile
-    document.addEventListener("click", function (e) {
-        if (window.innerWidth <= 768 && isMenuOpen && !e.target.closest(".menu")) {
-            toggleMenuTextVisibility();
-        }
-    });
-  
-    // Add a class to the menu on mobile to disable hover effects
-    function checkMobile() {
-        if (window.innerWidth <= 768) {
-            menu.classList.add("mobile");
-        } else {
-            menu.classList.remove("mobile");
-        }
-    }
-  
-    // Check on load and resize
-    window.addEventListener("resize", checkMobile);
-    checkMobile();
-  
     // Update active menu on scroll
     window.addEventListener("scroll", updateActiveMenu);
-    updateActiveMenu();
+      updateActiveMenu();
+    }
+}
+
+document.addEventListener("DOMContentLoaded", handlePCEventTracker);
+document.addEventListener("resize", handlePCEventTracker);
+// progress tracker end
+
+
+// mobile progress tracker start
+document.addEventListener("DOMContentLoaded", function () {
+  let progressWrap = document.querySelector(".progress-wrap");
+  let progressPath = document.querySelector(".progress-bar");
+  let pathLength = progressPath.getTotalLength();
+  let scrollTimeout;
+  let mobileSectionMenu = document.getElementById("mobileSectionMenu");
+  let menuBtn = document.getElementById("menu-btn-mobile");
+  const progressTrackerTimeout = 2000;
+
+  progressPath.style.strokeDasharray = pathLength;
+  progressPath.style.strokeDashoffset = pathLength;
+
+  let updateProgress = function () {
+      let scroll = window.scrollY;
+      let height = document.documentElement.scrollHeight - window.innerHeight;
+      let progress = pathLength - (scroll * pathLength) / height;
+      progressPath.style.strokeDashoffset = Math.max(progress, 0);
+
+      // Show the progress bar when scrolling
+      if (!progressWrap.classList.contains("active-progress")) {
+          progressWrap.classList.add("active-progress");
+      }
+
+      // Clear existing timeout and set a new one
+      clearTimeout(scrollTimeout);
+
+      if (!mobileSectionMenu.classList.contains("active")) {
+      // Hide progress bar after 2 seconds of inactivity
+      scrollTimeout = setTimeout(function () {
+          progressWrap.classList.remove("active-progress");
+      }, progressTrackerTimeout); // 2000ms (2 seconds) of inactivity
+    }
+  };
+
+  window.addEventListener("scroll", updateProgress);
+
+  function mobileProgressTrackerVisibility() {
+    if (window.scrollY > 100) {
+        progressWrap.classList.add("active-progress");
+    } else {
+        progressWrap.classList.remove("active-progress");
+    }
+}
+
+window.addEventListener("scroll", mobileProgressTrackerVisibility);
+
+  // Toggle menu button state
+  function toggleMenuBtn() {
+      let state = menuBtn.dataset.state;
+      menuBtn.dataset.state = 
+          (!state || state === "hamburger") ? "x" : "hamburger";
+      mobileSectionMenu.classList.toggle("active");
+  }
+
+  function toggleProgressTrackerTimout() {
+      if (menuBtn.dataset.state === "x") {
+          clearTimeout(scrollTimeout);
+      } else {
+        updateProgress();
+      }
+  }
+
+  // Click event for progress tracker to toggle menu
+  progressWrap.addEventListener("click", function (e) {
+      e.preventDefault();
+      toggleMenuBtn();
+      toggleProgressTrackerTimout();
   });
 
-// progress tracker end
+  // Scroll to section when a menu item is clicked
+  document.querySelectorAll(".mobile-section-menu a").forEach(function(link) {
+      link.addEventListener("click", function(e) {
+          e.preventDefault();
+          let targetId = this.getAttribute("href");
+          let targetSection = document.querySelector(targetId);
+          targetSection.scrollIntoView({ behavior: "smooth" });
+          mobileSectionMenu.classList.remove("active");
+          menuBtn.dataset.state = "hamburger";
+          mobileProgressTrackerVisibility();
+      });
+  });
+
+  // Highlight the current section in the menu
+  function highlightCurrentSection() {
+      let fromTop = window.scrollY;
+      document.querySelectorAll(".mobile-section-menu a").forEach(link => {
+          let sectionMobile = document.querySelector(link.getAttribute("href"));
+          if (
+              sectionMobile.offsetTop <= fromTop + 100 &&
+              sectionMobile.offsetTop + sectionMobile.offsetHeight > fromTop + 100
+          ) {
+              link.classList.add("active");
+          } else {
+              link.classList.remove("active");
+          }
+      });
+  }
+
+  window.addEventListener("scroll", highlightCurrentSection);
+});
+
+// mobile progress tracker end
 
 document.addEventListener("DOMContentLoaded", function () {
     const elements = document.querySelectorAll(".fade-in-left, .fade-in-right");

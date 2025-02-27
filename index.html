@@ -31,6 +31,8 @@
 <body>
     <div class="container d-flex align-items-center justify-content-center">
         <div class="page-row">
+
+          <!--progress tracker start-->
           <ul class="menu">
             <li data-id="1"><span>Welcome</span><div class="circle-o"></div></li>
             <li data-id="2"><span>Create With Us</span><div class="circle-o"></div></li>
@@ -41,7 +43,37 @@
             <li data-id="7"><span>Locations</span><div class="circle-o"></div></li>
             <li data-id="8"><span>Clients</span><div class="circle-o"></div></li>
             <li data-id="9"><span>Contact Us</span><div class="circle-o"></div></li>
-        </ul>
+          </ul>
+          <!--progress tracker end-->
+
+          <!--mobile progress tracker start-->
+          <div class="progress-wrap">
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-2 -2 104 104">
+                <!-- Background Circle -->
+                <path class="progress-bg" d="M50,2 a48,48 0 0,1 0,96 a48,48 0 0,1 0,-96"></path>
+                <!-- Progress Fill -->
+                <path class="progress-bar" d="M50,2 a48,48 0 0,1 0,96 a48,48 0 0,1 0,-96" style="stroke-dasharray: 307.919; stroke-dashoffset: 0;"></path>
+            </svg>
+            <button id="menu-btn-mobile">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    
+        <!-- Section Menu (Initially hidden) -->
+        <div class="mobile-section-menu" id="mobileSectionMenu">
+            <a href="#first-page-container">Welcome</a>
+            <a href="#banner-text-section">Create With Us</a>
+            <a href="#section3">Corporate Events</a>
+            <a href="#section4">Private Events</a>
+            <a href="#section5">Consultations</a>
+            <a href="#sand-color-section">Founder</a>
+            <a href="#locations-section">Locations</a>
+            <a href="#clients-section">Clients</a>
+            <a href="#contact-section" id="last-mobile-tracker-menu-section">Contact Us</a>
+        </div>
+          <!--mobile progress tracker end-->
           <div class="section section1" id="first-page-container">
             <div class="row" id="logo-socials-row">      
                 <div class="col-12 col-sm-7 name-column">
@@ -160,7 +192,7 @@
 
             <div class="row" id="services-section">
                 <div id="services-section-inner">
-                  <div class="row service-section-row coorporate-events-row services-section-lefthand-row section section3">
+                  <div class="row service-section-row coorporate-events-row services-section-lefthand-row section section3" id="section3">
                   <div class="col-12 col-md-2 d-flex align-items-center justify-content-center services-section-lefthand-text-div">
                     <div class="services-section-lefthand-text fade-in-left" id="coorporate-events-text">
                       <div class="stressed-text services-section-title">Corporate Events</div>
@@ -181,7 +213,7 @@
                   </div>
                 </div>
 
-                <div class="row service-section-row private-celebrations-row services-section-righthand-row section section4">
+                <div class="row service-section-row private-celebrations-row services-section-righthand-row section section4" id="section4">
                   <div class="col-12 col-md-10 align-items-center justify-content-center flex-column services-section-righthand-image-holder-div fade-in-left image-holder-pc">
                     <div class="services-section-righthand-image-holder">
                     <img class="services-section-righthand-image" src="files/media/stock/coorporate-events.png">
@@ -210,7 +242,7 @@
 
                 </div>
 
-                <div class="row service-section-row consultations-row services-section-lefthand-row section section5">
+                <div class="row service-section-row consultations-row services-section-lefthand-row section section5" id="section5">
                   <div class="col-12 col-md-2 d-flex align-items-center justify-content-center services-section-lefthand-text-div">
                     <div class="services-section-lefthand-text fade-in-left" id="consultations-text">
                       <div class="stressed-text services-section-title">Consultations</div>
