@@ -253,15 +253,19 @@ html, body {
     background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
-    padding: 5px 10px 5px 10px;
-    display: none;
+    padding: 5px 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
     z-index: 999;
-    transition: opacity 0.3s ease;
 }
 
 .mobile-section-menu.active {
-    display: block;
     opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s;
 }
 
 .mobile-section-menu a {

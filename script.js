@@ -112,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let mobileSectionMenu = document.getElementById("mobileSectionMenu");
   let menuBtn = document.getElementById("menu-btn-mobile");
   const progressTrackerTimeout = 2000;
+  let allowCloseMenu = false; // Add this flag
 
   progressPath.style.strokeDasharray = pathLength;
   progressPath.style.strokeDashoffset = pathLength;
@@ -145,10 +146,13 @@ document.addEventListener("DOMContentLoaded", function () {
         progressWrap.classList.add("active-progress");
     } else {
         progressWrap.classList.remove("active-progress");
+        if (mobileSectionMenu.classList.contains("active")) {
+          mobileSectionMenu.classList.remove("active");
+        }
     }
-}
+  }
 
-window.addEventListener("scroll", mobileProgressTrackerVisibility);
+  window.addEventListener("scroll", mobileProgressTrackerVisibility);
 
   // Toggle menu button state
   function toggleMenuBtn() {
@@ -156,6 +160,15 @@ window.addEventListener("scroll", mobileProgressTrackerVisibility);
       menuBtn.dataset.state = 
           (!state || state === "hamburger") ? "x" : "hamburger";
       mobileSectionMenu.classList.toggle("active");
+
+      // Allow closing the menu after a short delay
+      if (mobileSectionMenu.classList.contains("active")) {
+          setTimeout(() => {
+              allowCloseMenu = true;
+          }, 100); // 100ms delay
+      } else {
+          allowCloseMenu = false;
+      }
   }
 
   function toggleProgressTrackerTimout() {
@@ -203,8 +216,16 @@ window.addEventListener("scroll", mobileProgressTrackerVisibility);
   }
 
   window.addEventListener("scroll", highlightCurrentSection);
-});
 
+  // Close mobile menu when clicking outside
+  document.addEventListener("click", function(event) {
+      if (allowCloseMenu && !mobileSectionMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+          mobileSectionMenu.classList.remove("active");
+          menuBtn.dataset.state = "hamburger";
+          allowCloseMenu = false; // Reset the flag
+      }
+  });
+});
 // mobile progress tracker end
 
 document.addEventListener("DOMContentLoaded", function () {
