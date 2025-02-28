@@ -1683,16 +1683,16 @@ p {
     }
 
     .services-section-lefthand-text-div {
-        padding: 0 8vw 0 6vw;
+        padding: 0 8vw 0 8vw;
     }
 
     .services-section-righthand-text-div {
-        padding: 0 8vw 0 6vw;
+        padding: 0 8vw 0 8vw;
     }
 
     .image-holder-mobile {
         display: flex;
-        margin: 10vh 0 10vh 0;
+        margin: 10vh 0 8vh 0;
         padding: 0;
     }
     
