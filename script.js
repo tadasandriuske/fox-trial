@@ -195,7 +195,24 @@ document.addEventListener("DOMContentLoaded", function () {
           e.preventDefault();
           let targetId = this.getAttribute("href");
           let targetSection = document.querySelector(targetId);
-          targetSection.scrollIntoView({ behavior: "smooth" });
+          const rectMobile = targetSection.getBoundingClientRect();
+          const screenHeightMobile = window.innerHeight;
+          const sectionTopMobile = rectMobile.top + scrollY; // Section top relative to the document
+          const sectionHeightMobile = rectMobile.height; // Section height
+  
+          let targetScrollPositionMobile;
+  
+          if (sectionHeightMobile < screenHeightMobile) {
+            targetScrollPositionMobile = sectionTopMobile  - ((screenHeightMobile - sectionHeightMobile) / 2)
+          } else {
+            targetScrollPositionMobile = sectionTopMobile;
+          }
+
+
+          window.scrollTo({
+            top: targetScrollPositionMobile,
+            behavior: "smooth"
+        });
           mobileSectionMenu.classList.remove("active");
           menuBtn.dataset.state = "hamburger";
           mobileProgressTrackerVisibility();

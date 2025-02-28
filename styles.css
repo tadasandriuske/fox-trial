@@ -1682,9 +1682,18 @@ p {
         display: none;
     }
 
+    .services-section-lefthand-text-div {
+        padding: 0 8vw 0 6vw;
+    }
+
+    .services-section-righthand-text-div {
+        padding: 0 8vw 0 6vw;
+    }
+
     .image-holder-mobile {
         display: flex;
         margin: 10vh 0 10vh 0;
+        padding: 0;
     }
     
     #vagone-photo-div {
