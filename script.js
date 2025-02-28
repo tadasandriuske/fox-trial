@@ -219,21 +219,45 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 
-  // Highlight the current section in the menu
   function highlightCurrentSection() {
-      let fromTop = window.scrollY;
-      document.querySelectorAll(".mobile-section-menu a").forEach(link => {
-          let sectionMobile = document.querySelector(link.getAttribute("href"));
-          if (
-              sectionMobile.offsetTop <= fromTop + 100 &&
-              sectionMobile.offsetTop + sectionMobile.offsetHeight > fromTop + 100
-          ) {
-              link.classList.add("active");
-          } else {
-              link.classList.remove("active");
-          }
-      });
-  }
+    let fromTop = window.scrollY;
+    let windowHeight = window.innerHeight;
+    let viewportMiddle = fromTop + windowHeight / 2; // Middle of the visible screen
+    let activeLink = null;
+    let closestDistance = Infinity;
+
+    document.querySelectorAll(".mobile-section-menu a").forEach(link => {
+        let sectionMobile = document.querySelector(link.getAttribute("href"));
+        let sectionTop = sectionMobile.offsetTop;
+        let sectionBottom = sectionTop + sectionMobile.offsetHeight;
+
+        // Check if the middle of the screen is inside this section
+        if (sectionTop <= viewportMiddle && sectionBottom >= viewportMiddle) {
+            // Middle of the screen is inside this section, mark it as active
+            activeLink = link;
+            closestDistance = 0; // No need to check further, this section is active
+        } else {
+            // If the middle is not inside this section, calculate the distance to the closest edge
+            let distanceTop = Math.abs(sectionTop - viewportMiddle);
+            let distanceBottom = Math.abs(sectionBottom - viewportMiddle);
+            let minDistance = Math.min(distanceTop, distanceBottom);
+
+            // If this section's edge is closer than the previous closest, update the active link
+            if (minDistance < closestDistance) {
+                closestDistance = minDistance;
+                activeLink = link;
+            }
+        }
+
+        // Remove the active class from all links
+        link.classList.remove("active");
+    });
+
+    // Add the active class to the active link
+    if (activeLink) {
+        activeLink.classList.add("active");
+    }
+}
 
   window.addEventListener("scroll", highlightCurrentSection);
 
@@ -242,7 +266,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (allowCloseMenu && !mobileSectionMenu.contains(event.target) && !menuBtn.contains(event.target)) {
           mobileSectionMenu.classList.remove("active");
           menuBtn.dataset.state = "hamburger";
-          allowCloseMenu = false; // Reset the flag
+          allowCloseMenu = false;
+          updateProgress();
       }
   });
 });

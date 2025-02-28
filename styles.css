@@ -1375,6 +1375,7 @@ p {
 }
 
 .person-card h3 {
+    font-weight: 400;
     padding-top: 5px;
     font-size: 1.2rem;
     margin: 0;
@@ -1638,6 +1639,14 @@ p {
     #services-section {
         padding-left: 0;
         padding-right: 0;
+    }
+
+    .services-section-righthand-text-div {
+        position: static;
+    }
+
+    .services-section-lefthand-text-div {
+        position: static;
     }
 
     .services-section-lefthand-text {
