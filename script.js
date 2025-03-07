@@ -539,7 +539,7 @@ const posts = [
     const carouselInner = document.querySelector(".instagram-carousel-inner");
     carouselInner.innerHTML = "";
     const columnsPerRow = getColumnsPerRow();
-    const rowsPerSlide = columnsPerRow > 1 ? 2 : 1;
+    const rowsPerSlide = columnsPerRow > 1 ? 2 : 1; // Use 2 rows for larger screens, 1 row for small screens
     const postsPerSlide = columnsPerRow * rowsPerSlide;
   
     const validImageCount = posts.length - (posts.length % postsPerSlide);
@@ -548,7 +548,7 @@ const posts = [
       const slideBox = document.createElement("div");
       slideBox.classList.add("slide-box");
       slideBox.style.display = "flex";
-      slideBox.style.flexDirection = "column";
+      slideBox.style.flexDirection = "column"; // Stack rows vertically
   
       for (let row = 0; row < rowsPerSlide; row++) {
         const rowDiv = document.createElement("div");
@@ -557,15 +557,16 @@ const posts = [
   
         for (let col = 0; col < columnsPerRow; col++) {
           const imgIndex = i + row * columnsPerRow + col;
-          if (imgIndex >= posts.length) break;
+          if (imgIndex >= posts.length) break; // Avoid overflow
   
           const imgContainer = document.createElement("div");
           imgContainer.classList.add("image-container");
   
+          // Create the anchor tag and set the href to the post link
           const anchor = document.createElement("a");
           anchor.href = posts[imgIndex]["post-link"];
-          anchor.target = "_blank";
-          anchor.style.position = "relative";
+          anchor.target = "_blank"; // Open the link in a new tab
+          anchor.style.position = "relative"; // Ensure anchor tag wraps everything
   
           const img = document.createElement("img");
           img.src = posts[imgIndex]["image"];
@@ -575,6 +576,7 @@ const posts = [
           description.classList.add("image-description");
           description.textContent = posts[imgIndex]["description"];
   
+          // Add post type specific icon based on post "type"
           if (posts[imgIndex]["type"] === "multiple") {
             const icon = document.createElement("span");
             icon.classList.add("instagram-posts-item-image-icon-multiple");
@@ -583,11 +585,22 @@ const posts = [
                                 <path d="M0,4.102l0,28.355c0,2.241,1.814,4.067,4.051,4.067h28.365c2.237,0,4.066-1.826,4.066-4.067l0-28.356c0-2.238-1.828-4.051-4.066-4.051H4.051C1.814,0.05,0,1.862,0,4.102z"></path>
                               </svg>`;
             imgContainer.appendChild(icon);
+          } else if (posts[imgIndex]["type"] === "video") {
+            const icon = document.createElement("span");
+            icon.classList.add("instagram-posts-item-image-icon-video");
+            icon.innerHTML = `<svg viewBox="0 0 24 24">
+                                <path d="M23.467,5.762c-0.118-0.045-0.232-0.068-0.342-0.068c-0.246,0-0.451,0.087-0.615,0.26l-3.76,3.217v5.766l3.76,3.578c0.164,0.173,0.369,0.26,0.615,0.26c0.109,0,0.223-0.023,0.342-0.068C23.822,18.552,24,18.284,24,17.901V6.57C24,6.186,23.822,5.917,23.467,5.762z"></path>
+                                <path d="M16.33,4.412c-0.77-0.769-1.696-1.154-2.78-1.154H3.934c-1.084,0-2.01,0.385-2.78,1.154C0.385,5.182,0,6.108,0,7.192v9.616c0,1.084,0.385,2.01,1.154,2.78c0.77,0.77,1.696,1.154,2.78,1.154h9.616c1.084,0,2.01-0.385,2.78-1.154c0.77-0.77,1.154-1.696,1.154-2.78v-3.076v-3.478V7.192C17.484,6.108,17.099,5.182,16.33,4.412z M8.742,17.229c-2.888,0-5.229-2.341-5.229-5.229c0-2.888,2.341-5.229,5.229-5.229S13.971,9.112,13.971,12C13.971,14.888,11.63,17.229,8.742,17.229z"></path>
+                                <circle cx="8.742" cy="12" r="3.5"></circle>
+                              </svg>`;
+            imgContainer.appendChild(icon);
           }
   
+          // Append the image and description inside the anchor tag
           anchor.appendChild(img);
-          anchor.appendChild(description);
-          imgContainer.appendChild(anchor);
+          anchor.appendChild(description); // Description is now inside the anchor
+  
+          imgContainer.appendChild(anchor); // imgContainer contains the anchor tag with both img and description
           rowDiv.appendChild(imgContainer);
         }
         slideBox.appendChild(rowDiv);
@@ -602,9 +615,10 @@ const posts = [
     }
   
     // Reinitialize the carousel after generating new slides
-    const carousel = new bootstrap.Carousel(document.getElementById("carousel"));
+    const carousel = new bootstrap.Carousel(document.getElementById("instagram-carousel"));
   }
   
+  // Debounce function to limit how often the carousel regenerates on resize
   function debounce(func, wait) {
     let timeout;
     return function (...args) {
@@ -613,6 +627,7 @@ const posts = [
     };
   }
   
+  // Event listeners
   window.addEventListener("resize", debounce(generateCarousel, 100));
   document.addEventListener("DOMContentLoaded", generateCarousel, { passive: true });
   
