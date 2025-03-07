@@ -628,7 +628,6 @@ const posts = [
   }
   
   // Event listeners
-  window.addEventListener("resize", debounce(generateCarousel, 100));
   document.addEventListener("DOMContentLoaded", generateCarousel, { passive: true });
   
   // instagram widget end
