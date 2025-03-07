@@ -305,124 +305,128 @@ function scrollToContactSection() {
 // countries slider start
 
 const tabsBox = document.querySelector(".tabs-box");
-        const allTabs = tabsBox.querySelectorAll(".tab");
-        const arrowIcons = document.querySelectorAll(".icon i");
-        const contentWindow = document.querySelector(".content-window");
-        const tabContents = document.querySelectorAll(".tab-content");
+const allTabs = tabsBox.querySelectorAll(".tab");
+const arrowIcons = document.querySelectorAll(".icon i");
+const contentWindow = document.querySelector(".content-window");
+const tabContents = document.querySelectorAll(".tab-content");
 
-        let isDragging = false;
+let isDragging = false;
+let touchStartX = 0;
 
-        // Function to center the selected tab
-        const centerSelectedTab = (tab) => {
-            const tabRect = tab.getBoundingClientRect();
-            const tabsBoxRect = tabsBox.getBoundingClientRect();
-            const scrollLeft = tabsBox.scrollLeft;
-            const offset = tabRect.left - tabsBoxRect.left + scrollLeft - (tabsBoxRect.width / 2) + (tabRect.width / 2);
-            
-            tabsBox.scrollTo({
-                left: offset,
-                behavior: "smooth"
-            });
+// Function to center the selected tab
+const centerSelectedTab = (tab) => {
+    const tabRect = tab.getBoundingClientRect();
+    const tabsBoxRect = tabsBox.getBoundingClientRect();
+    const scrollLeft = tabsBox.scrollLeft;
+    const offset = tabRect.left - tabsBoxRect.left + scrollLeft - (tabsBoxRect.width / 2) + (tabRect.width / 2);
+    
+    tabsBox.scrollTo({
+        left: offset,
+        behavior: "smooth"
+    });
 
-            // Force a re-evaluation of the scroll position after the scroll completes
-            setTimeout(() => {
-                handleIcons(tabsBox.scrollLeft);
-            }, 300); // Match the duration of the smooth scroll
-        };
+    setTimeout(() => {
+        handleIcons(tabsBox.scrollLeft);
+    }, 300);
+};
 
-        // Function to update the content window
-        const updateContentWindow = (tabId) => {
-            // Fade out the content window
-            contentWindow.classList.add("fade-out");
+// Function to update the content window
+const updateContentWindow = (tabId) => {
+    contentWindow.classList.add("fade-out");
 
-            // Wait for the fade-out transition to complete
-            setTimeout(() => {
-                // Hide all tab contents
-                tabContents.forEach(content => content.classList.remove("active"));
+    setTimeout(() => {
+        tabContents.forEach(content => content.classList.remove("active"));
+        const selectedContent = document.getElementById(tabId);
+        if (selectedContent) {
+            selectedContent.classList.add("active");
+        }
 
-                // Show the selected tab content
-                const selectedContent = document.getElementById(tabId);
-                if (selectedContent) {
-                    selectedContent.classList.add("active");
-                }
+        contentWindow.classList.remove("fade-out");
+    }, 300);
+};
 
-                // Fade in the content window
-                contentWindow.classList.remove("fade-out");
-            }, 300); // Match the duration of the CSS transition
-        };
+// Handle arrow icons visibility
+const handleIcons = (scrollVal) => {
+    let maxScrollableWidth = tabsBox.scrollWidth - tabsBox.clientWidth;
+    arrowIcons[0].parentElement.style.display = scrollVal <= 0 ? "none" : "flex";
+    arrowIcons[1].parentElement.style.display = maxScrollableWidth - scrollVal <= 1 ? "none" : "flex";
+};
 
-        // Handle arrow icons visibility
-        const handleIcons = (scrollVal) => {
-            let maxScrollableWidth = tabsBox.scrollWidth - tabsBox.clientWidth;
-            arrowIcons[0].parentElement.style.display = scrollVal <= 0 ? "none" : "flex";
-            arrowIcons[1].parentElement.style.display = maxScrollableWidth - scrollVal <= 1 ? "none" : "flex";
-        };
+// Function to move to the next or previous tab
+const moveTab = (direction) => {
+    const activeTab = tabsBox.querySelector(".active");
+    let targetTab = direction === "left" ? activeTab.previousElementSibling : activeTab.nextElementSibling;
 
-        // Function to move to the next or previous tab
-        const moveTab = (direction) => {
-            const activeTab = tabsBox.querySelector(".active");
-            let targetTab;
+    if (targetTab) {
+        activeTab.classList.remove("active");
+        targetTab.classList.add("active");
+        centerSelectedTab(targetTab);
+        updateContentWindow(targetTab.dataset.tab);
+    }
+};
 
-            if (direction === "left") {
-                targetTab = activeTab.previousElementSibling;
-            } else if (direction === "right") {
-                targetTab = activeTab.nextElementSibling;
-            }
+// Event listeners for arrow icons
+arrowIcons.forEach(icon => {
+    icon.addEventListener("click", () => {
+        moveTab(icon.id);
+        handleIcons(tabsBox.scrollLeft);
+    });
+});
 
-            if (targetTab) {
-                activeTab.classList.remove("active");
-                targetTab.classList.add("active");
-                centerSelectedTab(targetTab);
-                updateContentWindow(targetTab.dataset.tab);
-            }
-        };
-
-        // Event listeners for arrow icons
-        arrowIcons.forEach(icon => {
-            icon.addEventListener("click", () => {
-                moveTab(icon.id);
-                handleIcons(tabsBox.scrollLeft);
-            });
-        });
-
-        // Event listeners for tabs
-        allTabs.forEach(tab => {
-            tab.addEventListener("click", () => {
-                tabsBox.querySelector(".active").classList.remove("active");
-                tab.classList.add("active");
-                centerSelectedTab(tab);
-                updateContentWindow(tab.dataset.tab);
-                
-                // Call handleIcons after a short delay to ensure the scroll position is updated
-                setTimeout(() => {
-                    handleIcons(tabsBox.scrollLeft);
-                }, 300); // Match the duration of the smooth scroll
-            });
-        });
-
-        // Dragging functionality
-        const dragging = (e) => {
-            if (!isDragging) return;
-            tabsBox.classList.add("dragging");
-            tabsBox.scrollLeft -= e.movementX;
+// Event listeners for tabs
+allTabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+        tabsBox.querySelector(".active").classList.remove("active");
+        tab.classList.add("active");
+        centerSelectedTab(tab);
+        updateContentWindow(tab.dataset.tab);
+        
+        setTimeout(() => {
             handleIcons(tabsBox.scrollLeft);
-        };
+        }, 300);
+    });
+});
 
-        const dragStop = () => {
-            isDragging = false;
-            tabsBox.classList.remove("dragging");
-        };
+// Dragging functionality (mouse and touch)
+const dragging = (e) => {
+    if (!isDragging) return;
+    tabsBox.classList.add("dragging");
 
-        tabsBox.addEventListener("mousedown", () => isDragging = true);  
-        tabsBox.addEventListener("touchstart", () => isDragging = true); 
-        tabsBox.addEventListener("mousemove", dragging);                 
-        tabsBox.addEventListener("touchmove", dragging);            
-        document.addEventListener("mouseup", dragStop);                
-        document.addEventListener("touchend", dragStop);      
+    let movementX;
+    if (e.type === "mousemove") {
+        movementX = e.movementX;
+    } else if (e.type === "touchmove") {
+        movementX = e.touches[0].clientX - touchStartX;
+        touchStartX = e.touches[0].clientX;
+    }
 
-        // Initialize content window with the active tab's content
-        updateContentWindow(tabsBox.querySelector(".active").dataset.tab);
-        handleIcons(tabsBox.scrollLeft); // Initialize arrow icons visibility
+    tabsBox.scrollLeft -= movementX;
+    handleIcons(tabsBox.scrollLeft);
+};
+
+const dragStop = () => {
+    isDragging = false;
+    tabsBox.classList.remove("dragging");
+};
+
+// Mouse events
+tabsBox.addEventListener("mousedown", () => isDragging = true);
+tabsBox.addEventListener("mousemove", dragging);
+document.addEventListener("mouseup", dragStop);
+
+// Touch events
+tabsBox.addEventListener("touchstart", (e) => {
+    isDragging = true;
+    touchStartX = e.touches[0].clientX;
+}, { passive: true });
+
+tabsBox.addEventListener("touchmove", dragging, { passive: false });
+document.addEventListener("touchend", dragStop);
+
+// Initialize content window with the active tab's content
+updateContentWindow(tabsBox.querySelector(".active").dataset.tab);
+handleIcons(tabsBox.scrollLeft);
+
 
 // countries slider end
 
