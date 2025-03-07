@@ -537,10 +537,11 @@ const posts = [
   
   function generateCarousel() {
     const carouselInner = document.querySelector(".instagram-carousel-inner");
-    carouselInner.innerHTML = "";
+    carouselInner.innerHTML = ""; // Clear the inner content each time we generate the carousel
+  
     const columnsPerRow = getColumnsPerRow();
     const rowsPerSlide = columnsPerRow > 1 ? 2 : 1; // Use 2 rows for larger screens, 1 row for small screens
-    const postsPerSlide = columnsPerRow * rowsPerSlide; 
+    const postsPerSlide = columnsPerRow * rowsPerSlide;
   
     const validImageCount = posts.length - (posts.length % postsPerSlide);
   
@@ -615,8 +616,12 @@ const posts = [
     }
   }
   
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(generateCarousel, 200); // Wait for 200ms after resizing stops
+  });
   
-  window.addEventListener("resize", generateCarousel);
-  document.addEventListener("DOMContentLoaded", generateCarousel);
+  document.addEventListener("DOMContentLoaded", generateCarousel, { passive: true });
   
   // instagram widget end
