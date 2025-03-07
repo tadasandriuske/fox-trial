@@ -346,6 +346,7 @@ html, body {
     font-style: normal;
     font-size: clamp(3.5rem, calc(var(--font-size-base) * 5), 5rem);
     margin: 0;
+    color: white;
 }
 
 #social-media-div {
@@ -360,7 +361,7 @@ html, body {
 
 #social-media-header a {
     margin: 0 10px;
-    color: #292929;
+    color: white;
     text-decoration: none;
     opacity: 0.95;
 }
@@ -509,6 +510,7 @@ p {
     z-index: 2;
     overflow: hidden;
     font-size: clamp(1rem, calc(var(--font-size-base) * 1.15), 1.15rem);
+    color: white;
   }
 
 .service-card h3 {
@@ -1619,7 +1621,7 @@ p {
 
     #social-media-header a {
         margin: 0 5px;
-        color: #292929;
+        color: white;
         text-decoration: none;
     }
 
@@ -1767,6 +1769,7 @@ p {
         display: flex;
         justify-content: center;
         align-items: center;
+        color: #212529;
     }
 
     #contact-inner-div {
