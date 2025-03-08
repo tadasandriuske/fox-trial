@@ -15,52 +15,42 @@ function handlePCEventTracker() {
   
 // Function to update the active menu item based on scroll position
 function updateActiveMenu() {
-    const scrollY = window.scrollY;
-    const screenHeight = window.innerHeight;
-    const bottomOfScreenY = scrollY + screenHeight;
-    const bottomOfDocumentY = document.documentElement.scrollHeight;
-    const buffer = 50;
+  const scrollY = window.scrollY;
+  const screenHeight = window.innerHeight;
+  const viewportMiddle = scrollY + (screenHeight / 2); // Middle of the viewport
+  let activeLink = null;
+  let closestDistance = Infinity;
 
-    sections.forEach((section, index) => {
-        const rect = section.getBoundingClientRect();
-        const sectionTop = rect.top + scrollY; // Section top relative to the document
-        const sectionHeight = rect.height; // Section height
-        const sectionBottom = sectionTop + sectionHeight; // Section bottom relative to the document
+  sections.forEach((section, index) => {
+      const sectionTop = section.offsetTop; // Section top relative to the document
+      const sectionBottom = sectionTop + section.offsetHeight; // Section bottom relative to the document
 
-        if (bottomOfScreenY >= bottomOfDocumentY) {
-            // If at the bottom of the page, highlight the last menu item
-            menuItems.forEach(item => item.classList.remove("current"));
-            menuItems[menuItems.length - 1].classList.add("current");
-        } else if (sectionHeight < screenHeight) {
-            // If section height is smaller than screen height, change menu item when section is in the middle of the screen
-            const sectionTopTrigger = sectionTop - ((screenHeight - sectionHeight) / 2) - buffer
-            const sectionBottomTrigger = (sectionTop + sectionHeight) + ((screenHeight - sectionHeight) / 2) + buffer
-            if (scrollY >= sectionTopTrigger && bottomOfScreenY <= sectionBottomTrigger) {
-                menuItems.forEach(item => item.classList.remove("current"));
-                menuItems[index].classList.add("current");
-            }
-        } else {
-            // If section height is larger than screen height, change menu item when section top hits the top of the screen
-            
-            if (sections.length - 1 >= index) {
-              nextSection = sections[index+1]
-              const nextSectionRect = nextSection.getBoundingClientRect();
-              const nextSectionTop = nextSectionRect.top + scrollY; // Section top relative to the document
-              const nextSectionHeight = nextSectionRect.height; // Section height
-              const nextSectionTopTrigger = nextSectionTop - ((screenHeight - nextSectionHeight) / 2) - buffer
-              if (scrollY >= sectionTop - buffer && scrollY <= nextSectionTopTrigger && scrollY < sectionBottom) {
-                menuItems.forEach(item => item.classList.remove("current"));
-                menuItems[index].classList.add("current");
+      // Check if the middle of the viewport is inside this section
+      if (sectionTop <= viewportMiddle && sectionBottom >= viewportMiddle) {
+          // Middle of the viewport is inside this section, mark it as active
+          activeLink = menuItems[index];
+          closestDistance = 0; // No need to check further, this section is active
+      } else {
+          // If the middle is not inside this section, calculate the distance to the closest edge
+          const distanceTop = Math.abs(sectionTop - viewportMiddle);
+          const distanceBottom = Math.abs(sectionBottom - viewportMiddle);
+          const minDistance = Math.min(distanceTop, distanceBottom);
 
-            }
-            } else {
-              if (scrollY >= sectionTop - buffer && scrollY < sectionBottom) {
-                  menuItems.forEach(item => item.classList.remove("current"));
-                  menuItems[index].classList.add("current");
-            }
+          // If this section's edge is closer than the previous closest, update the active link
+          if (minDistance < closestDistance) {
+              closestDistance = minDistance;
+              activeLink = menuItems[index];
           }
-        }
-    });
+      }
+  });
+
+  // Remove the active class from all menu items
+  menuItems.forEach(item => item.classList.remove("current"));
+
+  // Add the active class to the closest or active menu item
+  if (activeLink) {
+      activeLink.classList.add("current");
+  }
 }
   
     // Function to handle menu item clicks
@@ -541,6 +531,7 @@ const posts = [
   
   function generateCarousel() {
     const carouselInner = document.querySelector(".instagram-carousel-inner");
+    const gapBetweenPhotos = '10px';
     carouselInner.innerHTML = "";
     const columnsPerRow = getColumnsPerRow();
     const rowsPerSlide = columnsPerRow > 1 ? 2 : 1;
@@ -553,11 +544,13 @@ const posts = [
       slideBox.classList.add("slide-box");
       slideBox.style.display = "flex";
       slideBox.style.flexDirection = "column";
+      slideBox.style.gap = gapBetweenPhotos; // Gap between rows
   
       for (let row = 0; row < rowsPerSlide; row++) {
         const rowDiv = document.createElement("div");
         rowDiv.style.display = "flex";
         rowDiv.style.justifyContent = "center";
+        rowDiv.style.gap = gapBetweenPhotos; // Gap between photos in a row
   
         for (let col = 0; col < columnsPerRow; col++) {
           const imgIndex = i + row * columnsPerRow + col;
@@ -565,6 +558,15 @@ const posts = [
   
           const imgContainer = document.createElement("div");
           imgContainer.classList.add("image-container");
+          imgContainer.style.flex = "1"; // Ensure images take up equal space
+  
+          // Remove margin from the first and last image in each row
+          if (col === 0) {
+            imgContainer.style.marginLeft = "0";
+          }
+          if (col === columnsPerRow - 1) {
+            imgContainer.style.marginRight = "0";
+          }
   
           const anchor = document.createElement("a");
           anchor.href = posts[imgIndex]["post-link"];
@@ -607,7 +609,7 @@ const posts = [
   
     // Reinitialize the carousel after generating new slides
     const carousel = new bootstrap.Carousel(document.getElementById("instagram-carousel"));
-  }
+}
   
   function debounce(func, wait) {
     let timeout;

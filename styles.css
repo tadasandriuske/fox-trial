@@ -1742,15 +1742,6 @@ p {
         margin-bottom: 10vh;
     }
 
-    .instagram-header-container {
-        width: 100%;
-    }
-
-    .instagram-header {
-        padding: 0;
-        margin: auto;
-    }
-
     .carousel {
         width: 100%;
     }
@@ -1763,6 +1754,14 @@ p {
         min-width: auto;
         padding: 10vh 0 5vh 0;
         width: 95%;
+    }
+
+    .instagram-header-container {
+        width: 90%;
+    }
+
+    #instagram-carousel {
+        width: 90%;
     }
 
     .contact-info-column {
@@ -1979,6 +1978,30 @@ p {
     .country-carousel {
         width: 90% !important;
     }
+
+    .instagram-header-follow-button {
+        margin-left: 20px;
+    }
+
+    .instagram-header-container {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .instagram-header {
+        justify-content: space-between;
+        margin: 0;
+        width: 90%;
+        padding-right: 0;
+    }
+
+    .carousel-control-next, 
+    .carousel-control-prev {
+        display: none;
+    }
+
 
 
 
