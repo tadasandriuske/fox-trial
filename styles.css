@@ -582,7 +582,7 @@ p {
 }
 
 #banner-text {
-    font-size: clamp(2.75rem, calc(var(--font-size-base)* 3), 3rem);
+    font-size: clamp(2.75rem, calc(var(--font-size-base)* 3.5), 3.5rem);
     text-align: center;
     width: 80%;
     margin: 0;
@@ -595,7 +595,7 @@ p {
 }
 
 .specialised-service-image-container {
-    height: 100px;
+    height: 125px;
 }
 
 .specialised-service-image {
@@ -1579,6 +1579,10 @@ p {
         margin-top: 4vh;
         margin-bottom: 4vh;
     }
+
+    .specialised-service-image-container {
+        height: 90px;
+    }
     
     #sand-color-section {
         padding-top: 6vh;
@@ -1678,16 +1682,26 @@ p {
     }
 
     #banner-text {
+        font-size: 2rem;
         width: 90%;
-        margin: 2vh 0 2vh 0;
+        margin: 2vh 0 6vh 0;
     }
 
     .banner-text-specialised-service-container {
-        margin: 5vh 0 5vh 0;
+        margin: 6vh 0 6vh 0;
+    }
+
+    .specialised-service-container {
+        width: 90%;
+        padding: 0;
     }
 
     .specialised-service-image-container {
-        height: 125px;
+        height: 60px;
+    }
+    
+    .specialised-service-text {
+        font-size: 1rem;
     }
 
     .service-card {
