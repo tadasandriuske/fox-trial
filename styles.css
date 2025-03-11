@@ -88,7 +88,7 @@ html, body {
     position: absolute;
     right: 15px;
     background-color: rgba(0, 0, 0, 0.8);
-    min-width: 175px;
+    min-width: 205px;
     padding-right: 3px;
 }
 
@@ -249,7 +249,7 @@ html, body {
     position: fixed;
     right: 30px;
     top: 90px;
-    width: 200px;
+    min-width: 200px;
     background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
@@ -568,12 +568,45 @@ p {
     outline: none;
   }
 
-#banner-text {
-    font-size: clamp(2.75rem, calc(var(--font-size-base) * 4), 4rem);
-    text-align: center;
+#banner-text-section {
+    background-color: #a55e45;
+}
+
+.banner-text-specialised-service-container {
+    margin: 10vh 0 15vh 0;
+}
+
+.specialised-service-container {
     width: 70%;
-    margin: 20vh 0 20vh 0;
+    flex: 0;
+}
+
+#banner-text {
+    font-size: clamp(2.75rem, calc(var(--font-size-base)* 3), 3rem);
+    text-align: center;
+    width: 80%;
+    margin: 0;
     font-weight: 200;
+    margin: 5vh 0 10vh 0;
+}
+
+.specialsed-service-unit {
+    padding: 4vh 0 4vh 0;
+}
+
+.specialised-service-image-container {
+    height: 100px;
+}
+
+.specialised-service-image {
+    height: 100%;
+}
+
+
+.specialised-service-text {
+    margin-top: 2vh;
+    font-size: 1.25rem;
+    font-weight: 400;
 }
 
 #photo-section {
@@ -1646,6 +1679,15 @@ p {
 
     #banner-text {
         width: 90%;
+        margin: 2vh 0 2vh 0;
+    }
+
+    .banner-text-specialised-service-container {
+        margin: 5vh 0 5vh 0;
+    }
+
+    .specialised-service-image-container {
+        height: 125px;
     }
 
     .service-card {
