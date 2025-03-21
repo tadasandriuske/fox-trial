@@ -29,7 +29,7 @@
 
 :root {
     --font-size-base: 1.2vw; 
-    --viewport-height: 100vh/58;
+    --viewport-height: 100dvh/58;
 }
 
 html, body {
@@ -369,7 +369,7 @@ html, body {
 }
 
 #first-page-container {
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -380,7 +380,7 @@ html, body {
 #hero-split {
     display: -webkit-flex;
     display: flex;
-    height: 100vh;
+    height: 100dvh;
     min-height: 500px;
     width: 100%;
     position: relative;
@@ -499,8 +499,8 @@ html, body {
 }
 
 #social-media-header {
-    margin: 3vh 0 5vh 0;
-    margin-top: clamp(3vh, calc(var(--font-size-base) * 3), 4vh);
+    margin: 3dvh 0 5dvh 0;
+    margin-top: clamp(3dvh, calc(var(--font-size-base) * 3), 4dvh);
 }
 
 #social-media-header a {
@@ -525,7 +525,7 @@ html, body {
     overflow: hidden;
     margin-top: clamp(34.6px, calc(200px - var(--font-size-base) * 11), 68px);
     margin-bottom: clamp(43.25px, calc(200px - var(--font-size-base) * 11), 68px);
-    min-height: 35vh;
+    min-height: 35dvh;
 }
 
 
@@ -535,7 +535,7 @@ html, body {
 }
 
 .title-text-top {
-    margin-top: 3vh;
+    margin-top: 3dvh;
     margin-right: 20vw;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
@@ -543,7 +543,7 @@ html, body {
 
 .title-text-bottom {
     margin-left: 20vw;
-    margin-bottom: 3vh;
+    margin-bottom: 3dvh;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -583,7 +583,7 @@ html, body {
 }
 
 #logo-socials-row {
-    padding: 3vh 2vw 10px 2vw;
+    padding: 3dvh 2vw 10px 2vw;
 }
 
 #logo {
@@ -616,7 +616,7 @@ html, body {
     align-items: center;
     flex-direction: column;
     width: auto;
-    height: 70vh;
+    height: 70dvh;
 }
 
 .h-txt {
@@ -830,7 +830,7 @@ p {
 
 #services-title {
     font-size: clamp(2.75rem, calc(var(--font-size-base) * 3), 3rem);
-    margin-bottom: 3vh;
+    margin-bottom: 3dvh;
 }
 
 #banner-text-section {
@@ -886,7 +886,7 @@ p {
 }
 
 .banner-text-specialised-service-container {
-    margin: 10vh 0 15vh 0;
+    margin: 10dvh 0 15dvh 0;
 }
 
 .specialised-service-container {
@@ -900,11 +900,11 @@ p {
     width: 80%;
     margin: 0;
     font-weight: 300;
-    margin: 5vh 0 10vh 0;
+    margin: 5dvh 0 10dvh 0;
 }
 
 .specialsed-service-unit {
-    padding: 4vh 0 4vh 0;
+    padding: 4dvh 0 4dvh 0;
 }
 
 .specialised-service-image-container {
@@ -917,7 +917,7 @@ p {
 
 
 .specialised-service-text {
-    margin-top: 2vh;
+    margin-top: 2dvh;
     font-size: 1.25rem;
     font-weight: 400;
 }
@@ -933,7 +933,7 @@ p {
     justify-content: center;
     align-items: center;
     text-align: center; 
-    padding: 2vw 2vh 2vh 2vh;
+    padding: 2vw 2dvh 2dvh 2dvh;
 }
 
 .separator-line {
@@ -945,19 +945,19 @@ p {
 
 #services-section-inner {
     width: 100%;
-    padding: 5vh;
+    padding: 5dvh;
 }
 
 .coorporate-events-row {
-    margin-top: 12.5vh;
+    margin-top: 12.5dvh;
 }
 
 .private-celebrations-row {
-    margin-top: 20vh;
+    margin-top: 20dvh;
 }
 
 .consultations-row {
-    margin: 25vh 0 25vh 0;
+    margin: 25dvh 0 25dvh 0;
 }
 
 .services-section-righthand-text-div {
@@ -1049,7 +1049,7 @@ p {
 
 #sand-color-section {
     background-color: #e2d8c5;
-    padding: 10vh 10vw;
+    padding: 10dvh 10vw;
 }
 
 /* Initial state - hidden */
@@ -1108,7 +1108,7 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5vh 0 5vh 0;
+    padding: 5dvh 0 5dvh 0;
     max-width: 755px;
 }
 
@@ -1122,9 +1122,9 @@ p {
     position: absolute;
     left: 0;
     bottom: 0;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    margin-left: 2vh;
+    margin-top: 2dvh;
+    margin-bottom: 2dvh;
+    margin-left: 2dvh;
 }
 
 #vagone-socials a {
@@ -1153,11 +1153,11 @@ p {
     display: flex;
     align-items: center; 
     font-size: clamp(3.5rem, calc(var(--font-size-base) * 3.5), 3.5rem);
-    margin-bottom: 1vh;
+    margin-bottom: 1dvh;
 }
 
 #vagone-name-div {
-    margin-bottom: 2vh;
+    margin-bottom: 2dvh;
 }
 
 #quote-div {
@@ -1195,7 +1195,7 @@ p {
 
 #clients-title {
     font-size: clamp(2.75rem, calc(var(--font-size-base) * 3), 3rem);
-    margin-bottom: 3vh;
+    margin-bottom: 3dvh;
 }
 
 #clients-sub-text {
@@ -1205,7 +1205,7 @@ p {
 #clients-inner-container {
     width: 70%;
     min-width: 850px;
-    padding: 5vh;
+    padding: 5dvh;
 }
 
 .client-logo {
@@ -1226,13 +1226,13 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20vh;
+    margin-top: 20dvh;
 }
 
 /*countries slider start*/
 
 #countries-slider-wrapper {
-    padding: 0 6vw 10vh 6vw;
+    padding: 0 6vw 10dvh 6vw;
   }
 
   .slider-nav-wrapper {
@@ -1313,7 +1313,7 @@ p {
       border-radius: 13px;
       opacity: 1;
       transition: opacity 0.3s ease-in-out;
-      min-height: 60vh;
+      min-height: 60dvh;
       width: 100%;
   }
   .content-window.fade-out {
@@ -1648,8 +1648,8 @@ p {
     justify-content: center;
     align-items: center;
     text-align: center; 
-    padding: 6vh 2vw 2vw 2vw;
-    margin-top: 10vh;
+    padding: 6dvh 2vw 2vw 2vw;
+    margin-top: 10dvh;
     position: relative;  /* Ensure the pseudo-element is positioned correctly */
 }
 
@@ -1765,7 +1765,7 @@ p {
 }
 
 #social-media {
-    margin: 5vh 0 5vh 0;
+    margin: 5dvh 0 5dvh 0;
 }
 
 #social-media a {
@@ -1832,18 +1832,18 @@ p {
 }
 
 #copyright {
-    margin-top: 2vh;
+    margin-top: 2dvh;
 }
 
 @media (max-width: 1400px) {    
     #sand-color-section {
-        padding: 10vh 6vw;
+        padding: 10dvh 6vw;
     }
 }
 
 @media (max-width: 1200px) {    
     #sand-color-section {
-        padding: 10vh 2vw;
+        padding: 10dvh 2vw;
     }
 
     .services-section-lefthand-text {
@@ -1861,8 +1861,8 @@ p {
 
 @media (max-width: 991px) { /* Targets screens less than 1000px */
     #first-page-content {
-        margin-top: 4vh;
-        margin-bottom: 4vh;
+        margin-top: 4dvh;
+        margin-bottom: 4dvh;
     }
 
     .specialised-service-image-container {
@@ -1870,13 +1870,13 @@ p {
     }
     
     #sand-color-section {
-        padding-top: 6vh;
+        padding-top: 6dvh;
     }
 
     #clients-inner-container {
         width: 90%;
         min-width: 700px;
-        padding: 5vh;
+        padding: 5dvh;
     }
 
     .client-logo {
@@ -1897,7 +1897,7 @@ p {
 
     #quote-div-mobile {
         display: flex;
-        margin-bottom: 3vh;
+        margin-bottom: 3dvh;
     }
 
     .services-section-lefthand-text {
@@ -1930,7 +1930,7 @@ p {
 
     #photo-section {
         display: flex;
-        margin-top: 2vh;
+        margin-top: 2dvh;
     }
   }
 
@@ -1944,7 +1944,7 @@ p {
     }
 
     #first-page-content {
-        min-height: 30vh;
+        min-height: 30dvh;
     }
 
     #first-page-text {
@@ -2011,11 +2011,11 @@ p {
     #banner-text {
         font-size: 2rem;
         width: 90%;
-        margin: 2vh 0 6vh 0;
+        margin: 2dvh 0 6dvh 0;
     }
 
     .banner-text-specialised-service-container {
-        margin: 6vh 0 6vh 0;
+        margin: 6dvh 0 6dvh 0;
     }
 
     .specialised-service-container {
@@ -2032,7 +2032,7 @@ p {
     }
 
     .service-card {
-        padding: 2.5vh 1.4rem;
+        padding: 2.5dvh 1.4rem;
     }
 
     #services-section {
@@ -2062,7 +2062,7 @@ p {
     }
 
     .consultations-row {
-        margin-bottom: 5vh;
+        margin-bottom: 5dvh;
     }
 
     .services-section-righthand-text {
@@ -2100,7 +2100,7 @@ p {
 
     .image-holder-mobile {
         display: flex;
-        margin: 10vh 0 8vh 0;
+        margin: 10dvh 0 8dvh 0;
         padding: 0;
     }
     
@@ -2122,7 +2122,7 @@ p {
     #clients-section {
         padding-left: 0;
         padding-right: 0;
-        margin-bottom: 10vh;
+        margin-bottom: 10dvh;
     }
 
     .carousel {
@@ -2130,12 +2130,12 @@ p {
     }
 
     #locations-section {
-        margin-top: 10vh;
+        margin-top: 10dvh;
     }
 
     #clients-inner-container {
         min-width: auto;
-        padding: 10vh 0 5vh 0;
+        padding: 10dvh 0 5dvh 0;
         width: 95%;
     }
 
@@ -2149,15 +2149,15 @@ p {
 
     .contact-info-column {
         align-items: center;
-        margin-top: 2vh;
+        margin-top: 2dvh;
     }
 
     #regions {
-        margin-bottom: 2vh;
+        margin-bottom: 2dvh;
     }
 
     #copyright {
-        margin-bottom: 2vh;
+        margin-bottom: 2dvh;
     }
 
     .person-photo-div {
@@ -2217,7 +2217,7 @@ p {
     }
 
     #social-media-div {
-        margin-top: 2vh;
+        margin-top: 2dvh;
         justify-content: center;
     }
 
@@ -2232,7 +2232,7 @@ p {
 
     #first-page-content {
         margin-top: 0;
-        margin-bottom: 2vh;
+        margin-bottom: 2dvh;
     }
 
     .video-background {
@@ -2245,7 +2245,7 @@ p {
     }
     
     .title-text-top {
-        margin-top: 3vh;
+        margin-top: 3dvh;
         margin-right: 12vw;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     
@@ -2253,7 +2253,7 @@ p {
     
     .title-text-bottom {
         margin-left: 12vw;
-        margin-bottom: 3vh;
+        margin-bottom: 3dvh;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
     
@@ -2413,7 +2413,7 @@ p {
     }
 
     .person-card {
-        padding: 2.5vh 0;
+        padding: 2.5dvh 0;
     }
 
     .vagone-contact-info {
@@ -2452,7 +2452,7 @@ p {
 
     #copyright {
         font-size: clamp(16px, 4vw, 17.2px);
-        margin-bottom: 2vh;
+        margin-bottom: 2dvh;
     }
 
     .image-container {
