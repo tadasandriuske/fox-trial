@@ -625,7 +625,7 @@ html, body {
     font-weight: 400;
     line-height: 1.2;
     color: #fff;
-    font-size: 2.8vw;
+    font-size: 4vw;
     text-align: left;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -634,7 +634,7 @@ html, body {
 
 .g {
     color: #a55e45 !important;
-    font-size: 18px;
+    font-size: 2rem;
     letter-spacing: 0.1em !important;
     font-weight: 600;
     margin-bottom: 1%;
@@ -648,10 +648,12 @@ html, body {
       position: absolute;
       margin-top: -3%;
   }
+
   .l {
         margin-top: 1%;
       margin-left: 10%;
   }
+  
   #s-txt {
     position: absolute;
     top: 58%;
@@ -785,11 +787,11 @@ html, body {
     margin-left: 12px;
   }
   .view-more span {
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 11px;
     margin-left: 10px;
     color: #fff;
-    font-family: "Roboto", sans-serif;
+    font-family: "Nunito Sans", sans-serif;
   }
   img {
     vertical-align: middle;
@@ -833,19 +835,10 @@ p {
     margin-bottom: 3dvh;
 }
 
-#banner-text-section {
-    position: relative;
-}
-
 .under-box {
     background-color: #a55e45;
     height: 40px;
     width: 100%;
-}
-
-.banner-text {
-    background-color: #a55e45;
-    z-index: 2;
 }
 
 #notch {
@@ -881,8 +874,18 @@ p {
     outline: none;
   }
 
-#banner-text-section {
-    background-color: #a55e45;
+.specialized-service-row {
+    margin-top: 5dvh;
+}
+
+#specialized-services-title{
+    font-weight: 200;
+    font-size: clamp(2.25rem, calc(var(--font-size-base)* 3), 3rem);
+    margin-bottom: 3dvh;
+}
+
+#specialized-services-subtitle {
+    font-size: 1.15rem;
 }
 
 .banner-text-specialised-service-container {
@@ -894,32 +897,63 @@ p {
     flex: 0;
 }
 
-#banner-text {
-    font-size: clamp(2.75rem, calc(var(--font-size-base)* 3.5), 3.5rem);
-    text-align: center;
-    width: 80%;
-    margin: 0;
-    font-weight: 300;
-    margin: 5dvh 0 10dvh 0;
+.specialsed-service-inner-unit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .specialsed-service-unit {
-    padding: 4dvh 0 4dvh 0;
+    width: 100%;
+    padding: 8dvh 0 4dvh 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.specialsed-service-unit a {
+    max-width: 80%;
 }
 
 .specialised-service-image-container {
-    height: 125px;
+    max-width: 200px;
+    max-height: 200px;
+    min-height: 150px;
+    min-width: 150px;
+    width: 100%;
+}
+
+.specialised-service-image-container-right {
+    padding-left: 15px;
+}
+
+.specialised-service-image-container-left {
+    padding-right: 15px;
 }
 
 .specialised-service-image {
-    height: 100%;
+    width: 100%;
 }
 
+.specialised-service-text-container {
+    width: 100%;
+}
+
+.specialised-service-text-container-right {
+    padding-left: 15px;
+}
+
+.specialised-service-text-container-left {
+    padding-right: 15px;
+}
 
 .specialised-service-text {
-    margin-top: 2dvh;
+    font-family: "TheSeasons", sans-serif;
+    margin-top: 1dvh;
     font-size: 1.25rem;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 #photo-section {
@@ -933,7 +967,7 @@ p {
     justify-content: center;
     align-items: center;
     text-align: center; 
-    padding: 2vw 2dvh 2dvh 2dvh;
+    padding: 2dvh 0;
 }
 
 .separator-line {
@@ -944,6 +978,9 @@ p {
 }
 
 #services-section-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     padding: 5dvh;
 }
@@ -957,7 +994,7 @@ p {
 }
 
 .consultations-row {
-    margin: 25dvh 0 25dvh 0;
+    margin: 25dvh 0 10dvh 0;
 }
 
 .services-section-righthand-text-div {
@@ -1072,6 +1109,14 @@ p {
 .fade-in-right.active {
     opacity: 1;
     transform: translateX(0);
+}
+
+#specialized-services-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10dvh;
+    width: 70%;
+    padding: 5dvh;
 }
 
 
@@ -1359,6 +1404,7 @@ p {
 .country-name {
     font-size: clamp(2.25rem, calc(var(--font-size-base)* 3), 3rem);
     font-weight: 200;
+    text-align: start;
 }
 
 .country-info {
@@ -2008,12 +2054,6 @@ p {
         display: none !important;
       }
 
-    #banner-text {
-        font-size: 2rem;
-        width: 90%;
-        margin: 2dvh 0 6dvh 0;
-    }
-
     .banner-text-specialised-service-container {
         margin: 6dvh 0 6dvh 0;
     }
@@ -2028,16 +2068,11 @@ p {
     }
     
     .specialised-service-text {
-        font-size: 1rem;
+        font-size: 1.25rem;
     }
 
     .service-card {
         padding: 2.5dvh 1.4rem;
-    }
-
-    #services-section {
-        padding-left: 0;
-        padding-right: 0;
     }
 
     .services-section-righthand-text-div {
@@ -2102,6 +2137,11 @@ p {
         display: flex;
         margin: 10dvh 0 8dvh 0;
         padding: 0;
+    }
+
+    #specialized-services-section {
+        width: 95%;
+        margin-bottom: 0;
     }
     
     #vagone-photo-div {
@@ -2283,6 +2323,10 @@ p {
         font-size: clamp(16px, 4.5vw, 19.35px);
     }
 
+    #specialized-services-subtitle {
+        font-size: clamp(16px, 4.5vw, 19.35px);
+    }
+
     p {
         font-size: clamp(16px, 4.25vw, 18.275px);
     }
@@ -2346,6 +2390,10 @@ p {
     }
 
     .countries-slider-template-container {
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        flex-direction: column;
         padding-top: 20px;
         padding-left: 0;
         padding-right: 0;
@@ -2384,13 +2432,6 @@ p {
     .carousel-control-prev {
         display: none;
     }
-
-
-
-
-
-
-
 
     #clients-title {
         font-size: clamp(16px, 10vw, 43px);
@@ -2434,12 +2475,12 @@ p {
     }
 
     #social-media a svg {
-        height: clamp(28.8px, 8vw, 34.4px);
-        width: clamp(28.8px, 8vw, 34.4px);
+        height: clamp(28.8px, 7vw, 34.4px);
+        width: clamp(28.8px, 7vw, 34.4px);
     }
 
     #social-media a {
-        margin: 0 15px;
+        margin: 0 2px;
     }
 
     #operate-in {
