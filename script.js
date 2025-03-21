@@ -12,6 +12,7 @@ function handlePCEventTracker() {
     const sections = document.querySelectorAll(".section");
     const menuItems = document.querySelectorAll(".menu li");
     const menu = document.querySelector(".menu");
+    let isMenuOpen = false; 
   
 // Function to update the active menu item based on scroll position
 function updateActiveMenu() {
@@ -68,19 +69,58 @@ function updateActiveMenu() {
         } else {
           targetScrollPosition = sectionTop
         }
+
+        if (navigator.maxTouchPoints > 0 && isMenuOpen) {
+          toggleMenuTextVisibility();
+        }
   
         window.scrollTo({
             top: targetScrollPosition,
             behavior: "smooth"
         });
     }
+
+    function toggleMenuTextVisibility() {
+      isMenuOpen = !isMenuOpen;
+      menuItems.forEach(item => {
+          item.classList.toggle("active", isMenuOpen);
+      });
+  }
   
     // Add event listeners for menu items
     menuItems.forEach((menuItem, index) => {
         menuItem.addEventListener("click", function (e) {
+          if (navigator.maxTouchPoints > 0) { // Check if it's a mobile device
+            if (isMenuOpen) {
                 handleMenuItemClick(index);
-        });
+            } else {
+                toggleMenuTextVisibility();
+            }
+        } else {
+            handleMenuItemClick(index);
+        }
     });
+    });
+
+      // Close the menu when clicking outside on mobile
+        document.addEventListener("click", function (e) {
+          if (navigator.maxTouchPoints > 0 && isMenuOpen && !e.target.closest(".menu")) {
+              toggleMenuTextVisibility();
+          }
+      });
+
+      // Add a class to the menu on mobile to disable hover effects
+        function checkTouchscreen() {
+          if (navigator.maxTouchPoints > 0) {
+              menu.classList.add("touchscreen");
+          } else {
+              menu.classList.remove("touchscreen");
+          }
+      }
+    
+      // Check on load and resize
+      window.addEventListener("resize", checkTouchscreen);
+      checkTouchscreen();
   
     // Update active menu on scroll
     window.addEventListener("scroll", updateActiveMenu);
@@ -90,6 +130,31 @@ function updateActiveMenu() {
 
 document.addEventListener("DOMContentLoaded", handlePCEventTracker);
 document.addEventListener("resize", handlePCEventTracker);
+
+document.addEventListener('scroll', function() {
+  const heroSplitSection = document.getElementById('hero-split');
+  const menuItems = document.querySelectorAll('.menu li');
+
+  const heroSplitRect = heroSplitSection.getBoundingClientRect();
+  const heroSplitTop = heroSplitRect.top + window.scrollY; // Absolute top of #hero-split
+  const heroSplitBottom = heroSplitRect.bottom + window.scrollY; // Absolute bottom of #hero-split
+
+  menuItems.forEach(item => {
+      const circle = item.querySelector('.circle-o');
+      const itemRect = item.getBoundingClientRect();
+      const itemCenterY = itemRect.top + window.scrollY + itemRect.height / 2; // Center of the dot
+
+      // Check if the center of the dot is within the #hero-split section
+      if (itemCenterY >= heroSplitTop && itemCenterY < heroSplitBottom) {
+          circle.classList.add('inside-hero');
+          circle.classList.remove('outside-hero');
+      } else {
+          circle.classList.add('outside-hero');
+          circle.classList.remove('inside-hero');
+      }
+  });
+});
+
 // progress tracker end
 
 
@@ -261,6 +326,39 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   });
 });
+
+document.addEventListener('scroll', function() {
+  const heroSplitSection = document.getElementById('hero-split');
+  const progressBar = document.getElementById('progress-bar');
+  const menuBtn = document.getElementById('menu-btn-mobile');
+  const progressBg = document.querySelector('.progress-bg');
+
+  if (!heroSplitSection || !progressBar || !menuBtn || !progressBg) return; // Ensure elements exist
+
+  const heroSplitRect = heroSplitSection.getBoundingClientRect();
+  const heroSplitTop = heroSplitRect.top + window.scrollY;
+  const heroSplitBottom = heroSplitRect.bottom + window.scrollY;
+
+  function updateClass(element) {
+    const rect = element.getBoundingClientRect();
+    const centerY = rect.top + window.scrollY + rect.height / 2;
+
+    if (centerY >= heroSplitTop && centerY < heroSplitBottom) {
+      element.classList.add('inside-hero');
+      element.classList.remove('outside-hero');
+    } else {
+      element.classList.add('outside-hero');
+      element.classList.remove('inside-hero');
+    }
+  }
+
+  updateClass(progressBar);
+  updateClass(menuBtn);
+  updateClass(progressBg);
+});
+
+
+
 // mobile progress tracker end
 
 document.addEventListener("DOMContentLoaded", function () {
