@@ -645,18 +645,24 @@ html, body {
   }
 
   .amp {
-    font-family: "Playfair Display", serif;
-      font-size: clamp(4rem, calc(var(--font-size-base) * 5), 5rem);
+      font-family: "Libre Baskerville", serif;
+      font-size: clamp(4.5rem, calc(var(--font-size-base) * 4.5), 4.5rem);
       font-weight: 400;
       color: #a55e45 !important;
       z-index: -1;
       position: absolute;
-      margin-top: clamp(-3rem, calc(var(--font-size-base) * -3.5), -3.5rem);
+      margin-top: -3.2rem;
+      
   }
 
   .l {
       margin-top: 1%;
-      margin-left: 40px;
+      margin-left: 55px;
+  }
+
+  .l-mobile-top,
+  .l-mobile-bot {
+    display: none;
   }
   
   #s-txt {
@@ -726,10 +732,10 @@ html, body {
   .icon-start:focus,
   .icon-start:active {
     color: #a55e45;
-    transition: 0.5s;
-    -moz-transition: 0.5s;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
+    transition: 0.2s;
+    -moz-transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
   }
   
   .view-more {
@@ -1095,19 +1101,25 @@ p {
 }
 
 /* Initial state - hidden */
-.fade-in-left, .fade-in-right {
+.fade-in-left:not(.mobile-screen) {
     opacity: 0;
     transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-right:not(.mobile-screen) {
+    opacity: 0;
+    transform: translateX(50px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 /* When in view, make them visible */
 .fade-in-left.active {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0);r
 }
 
-.fade-in-right {
+.fade-in-right.active {
     transform: translateX(50px);
 }
 
@@ -1179,7 +1191,7 @@ p {
 
 #vagone-socials a {
     margin: 0 10px;
-    color: #F3F0E7;
+    color: white;
     opacity: 0.95;
     text-decoration: none;
 }
@@ -1192,6 +1204,10 @@ p {
 #vagone-socials a:hover,
 #vagone-socials a:active {
     color: #a55e45;
+    transition: 0.2s;
+    -moz-transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
 }
 
 #founder {
@@ -1619,6 +1635,10 @@ p {
     background-color: #a55e45;
     color: #F3F0E7;
     text-decoration: none;
+    transition: 0.2s;
+    -moz-transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
 }
 
 .image-container {
@@ -1834,6 +1854,10 @@ p {
 #social-media a svg:hover,
 #social-media a svg:active {
     fill: #F3F0E7;
+    transition: 0.2s;
+    -moz-transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
 }
 
 #social-media a #social-media-end-facebook {
@@ -2018,7 +2042,7 @@ p {
     }
 
     #text-overlay {
-        padding: 0 0 15px 0;
+        padding: 0 0 2.5svh 0;
       }
     
       .ib {
@@ -2038,7 +2062,7 @@ p {
       }
 
       .intro-holder {
-        height: 50%;
+        height: 60%;
         justify-content: end;
       }
 
@@ -2046,25 +2070,52 @@ p {
         height: 40%;
         align-items: start;
         padding-top: 5vw;
-        padding-right: 2vw;
+        padding-right: 3.5vw;
       }
     
       .icon-start {
-        height: 5.5vw;
+        height: 6vw;
       }
     
       .h-txt {
-        font-size: 7vw;
+        font-size: 10.5vw;
       }
 
       .g {
-        font-size: 4.5vw;
+        font-size: 6.7vw;
+        letter-spacing: 1.1vw !important;
+        margin-left: 0.2em;
+      }
+      
+      .sub-g {
+        margin-left: 0;
+        margin-left: 0.2em;
+      }
+
+      .l {
+       display: none;
+      }
+
+      .l-mobile-top,
+      .l-mobile-bot {
+        display: block;
+      }
+
+      .l-mobile-top {
+        margin-left: 5.7vw;
+        margin-top: 1vh;
+      }
+
+      .l-mobile-bot {
+        margin-right: 0.5vw;
+        margin-top: 1vh;
+        text-align: end;
       }
 
       .amp {
-        font-size: 10vw;
-        margin-top: -6vw;
-        margin-left: 5vw;
+        font-size: 14vw;
+        margin-top: -9vw;
+        margin-left: 0;
       }
 
       .hide {
@@ -2156,7 +2207,6 @@ p {
 
     .image-holder-mobile {
         margin: 10vh 0 8vh 0;
-        padding: 0;
     }
 
     #specialized-services-section {

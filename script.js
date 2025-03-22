@@ -367,7 +367,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         elements.forEach(el => {
             const rect = el.getBoundingClientRect();
-            if (rect.top < triggerBottom) {
+            if (window.innerWidth <= 768) {
+              el.classList.add("mobile-screen");
+            }
+            else if (rect.top < triggerBottom) {
                 el.classList.add("active");
             }
         });
