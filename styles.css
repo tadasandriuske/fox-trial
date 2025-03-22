@@ -29,7 +29,7 @@
 
 :root {
     --font-size-base: 1.2vw; 
-    --viewport-height: 100dvh/58;
+    --viewport-height: 100vh/58;
 }
 
 html, body {
@@ -369,7 +369,7 @@ html, body {
 }
 
 #first-page-container {
-    min-height: 100dvh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -380,7 +380,7 @@ html, body {
 #hero-split {
     display: -webkit-flex;
     display: flex;
-    height: 100dvh;
+    height: 100svh;
     min-height: 500px;
     width: 100%;
     position: relative;
@@ -499,8 +499,8 @@ html, body {
 }
 
 #social-media-header {
-    margin: 3dvh 0 5dvh 0;
-    margin-top: clamp(3dvh, calc(var(--font-size-base) * 3), 4dvh);
+    margin: 3vh 0 5vh 0;
+    margin-top: clamp(3vh, calc(var(--font-size-base) * 3), 4vh);
 }
 
 #social-media-header a {
@@ -525,7 +525,7 @@ html, body {
     overflow: hidden;
     margin-top: clamp(34.6px, calc(200px - var(--font-size-base) * 11), 68px);
     margin-bottom: clamp(43.25px, calc(200px - var(--font-size-base) * 11), 68px);
-    min-height: 35dvh;
+    min-height: 35vh;
 }
 
 
@@ -535,7 +535,7 @@ html, body {
 }
 
 .title-text-top {
-    margin-top: 3dvh;
+    margin-top: 3vh;
     margin-right: 20vw;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
@@ -543,7 +543,7 @@ html, body {
 
 .title-text-bottom {
     margin-left: 20vw;
-    margin-bottom: 3dvh;
+    margin-bottom: 3vh;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -583,7 +583,7 @@ html, body {
 }
 
 #logo-socials-row {
-    padding: 3dvh 2vw 10px 2vw;
+    padding: 3vh 2vw 10px 2vw;
 }
 
 #logo {
@@ -616,7 +616,7 @@ html, body {
     align-items: center;
     flex-direction: column;
     width: auto;
-    height: 70dvh;
+    height: 70vh;
 }
 
 .h-txt {
@@ -832,7 +832,7 @@ p {
 
 #services-title {
     font-size: clamp(2.75rem, calc(var(--font-size-base) * 3), 3rem);
-    margin-bottom: 3dvh;
+    margin-bottom: 3vh;
 }
 
 .under-box {
@@ -875,13 +875,13 @@ p {
   }
 
 .specialized-service-row {
-    margin-top: 5dvh;
+    margin-top: 5vh;
 }
 
 #specialized-services-title{
     font-weight: 200;
     font-size: clamp(2.25rem, calc(var(--font-size-base)* 3), 3rem);
-    margin-bottom: 3dvh;
+    margin-bottom: 3vh;
 }
 
 #specialized-services-subtitle {
@@ -889,7 +889,7 @@ p {
 }
 
 .banner-text-specialised-service-container {
-    margin: 10dvh 0 15dvh 0;
+    margin: 10vh 0 15vh 0;
 }
 
 .specialised-service-container {
@@ -906,7 +906,7 @@ p {
 
 .specialsed-service-unit {
     width: 100%;
-    padding: 8dvh 0 4dvh 0;
+    padding: 8vh 0 4vh 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -951,7 +951,7 @@ p {
 
 .specialised-service-text {
     font-family: "TheSeasons", sans-serif;
-    margin-top: 1dvh;
+    margin-top: 1vh;
     font-size: 1.25rem;
     font-weight: 300;
 }
@@ -967,7 +967,7 @@ p {
     justify-content: center;
     align-items: center;
     text-align: center; 
-    padding: 2dvh 0;
+    padding: 2vh 0;
 }
 
 .separator-line {
@@ -982,19 +982,19 @@ p {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 5dvh;
+    padding: 5vh;
 }
 
 .coorporate-events-row {
-    margin-top: 12.5dvh;
+    margin-top: 12.5vh;
 }
 
 .private-celebrations-row {
-    margin-top: 20dvh;
+    margin-top: 20vh;
 }
 
 .consultations-row {
-    margin: 25dvh 0 10dvh 0;
+    margin: 25vh 0 10vh 0;
 }
 
 .services-section-righthand-text-div {
@@ -1086,7 +1086,7 @@ p {
 
 #sand-color-section {
     background-color: #e2d8c5;
-    padding: 10dvh 10vw;
+    padding: 10vh 10vw;
 }
 
 /* Initial state - hidden */
@@ -1114,9 +1114,9 @@ p {
 #specialized-services-section {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10dvh;
+    margin-bottom: 10vh;
     width: 70%;
-    padding: 5dvh;
+    padding: 5vh;
 }
 
 
@@ -1153,7 +1153,7 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5dvh 0 5dvh 0;
+    padding: 5vh 0 5vh 0;
     max-width: 755px;
 }
 
@@ -1167,9 +1167,9 @@ p {
     position: absolute;
     left: 0;
     bottom: 0;
-    margin-top: 2dvh;
-    margin-bottom: 2dvh;
-    margin-left: 2dvh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 2vh;
 }
 
 #vagone-socials a {
@@ -1198,11 +1198,11 @@ p {
     display: flex;
     align-items: center; 
     font-size: clamp(3.5rem, calc(var(--font-size-base) * 3.5), 3.5rem);
-    margin-bottom: 1dvh;
+    margin-bottom: 1vh;
 }
 
 #vagone-name-div {
-    margin-bottom: 2dvh;
+    margin-bottom: 2vh;
 }
 
 #quote-div {
@@ -1240,7 +1240,7 @@ p {
 
 #clients-title {
     font-size: clamp(2.75rem, calc(var(--font-size-base) * 3), 3rem);
-    margin-bottom: 3dvh;
+    margin-bottom: 3vh;
 }
 
 #clients-sub-text {
@@ -1250,7 +1250,7 @@ p {
 #clients-inner-container {
     width: 70%;
     min-width: 850px;
-    padding: 5dvh;
+    padding: 5vh;
 }
 
 .client-logo {
@@ -1271,13 +1271,13 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20dvh;
+    margin-top: 20vh;
 }
 
 /*countries slider start*/
 
 #countries-slider-wrapper {
-    padding: 0 6vw 10dvh 6vw;
+    padding: 0 6vw 10vh 6vw;
   }
 
   .slider-nav-wrapper {
@@ -1358,7 +1358,7 @@ p {
       border-radius: 13px;
       opacity: 1;
       transition: opacity 0.3s ease-in-out;
-      min-height: 60dvh;
+      min-height: 60vh;
       width: 100%;
   }
   .content-window.fade-out {
@@ -1694,8 +1694,8 @@ p {
     justify-content: center;
     align-items: center;
     text-align: center; 
-    padding: 6dvh 2vw 2vw 2vw;
-    margin-top: 10dvh;
+    padding: 6vh 2vw 2vw 2vw;
+    margin-top: 10vh;
     position: relative;  /* Ensure the pseudo-element is positioned correctly */
 }
 
@@ -1811,7 +1811,7 @@ p {
 }
 
 #social-media {
-    margin: 5dvh 0 5dvh 0;
+    margin: 5vh 0 5vh 0;
 }
 
 #social-media a {
@@ -1878,18 +1878,18 @@ p {
 }
 
 #copyright {
-    margin-top: 2dvh;
+    margin-top: 2vh;
 }
 
 @media (max-width: 1400px) {    
     #sand-color-section {
-        padding: 10dvh 6vw;
+        padding: 10vh 6vw;
     }
 }
 
 @media (max-width: 1200px) {    
     #sand-color-section {
-        padding: 10dvh 2vw;
+        padding: 10vh 2vw;
     }
 
     .services-section-lefthand-text {
@@ -1907,8 +1907,8 @@ p {
 
 @media (max-width: 991px) { /* Targets screens less than 1000px */
     #first-page-content {
-        margin-top: 4dvh;
-        margin-bottom: 4dvh;
+        margin-top: 4vh;
+        margin-bottom: 4vh;
     }
 
     .specialised-service-image-container {
@@ -1916,13 +1916,13 @@ p {
     }
     
     #sand-color-section {
-        padding-top: 6dvh;
+        padding-top: 6vh;
     }
 
     #clients-inner-container {
         width: 90%;
         min-width: 700px;
-        padding: 5dvh;
+        padding: 5vh;
     }
 
     .client-logo {
@@ -1943,7 +1943,7 @@ p {
 
     #quote-div-mobile {
         display: flex;
-        margin-bottom: 3dvh;
+        margin-bottom: 3vh;
     }
 
     .services-section-lefthand-text {
@@ -1976,7 +1976,7 @@ p {
 
     #photo-section {
         display: flex;
-        margin-top: 2dvh;
+        margin-top: 2vh;
     }
   }
 
@@ -1990,7 +1990,7 @@ p {
     }
 
     #first-page-content {
-        min-height: 30dvh;
+        min-height: 30vh;
     }
 
     #first-page-text {
@@ -2055,7 +2055,7 @@ p {
       }
 
     .banner-text-specialised-service-container {
-        margin: 6dvh 0 6dvh 0;
+        margin: 6vh 0 6vh 0;
     }
 
     .specialised-service-container {
@@ -2072,7 +2072,7 @@ p {
     }
 
     .service-card {
-        padding: 2.5dvh 1.4rem;
+        padding: 2.5vh 1.4rem;
     }
 
     .services-section-righthand-text-div {
@@ -2097,7 +2097,7 @@ p {
     }
 
     .consultations-row {
-        margin-bottom: 5dvh;
+        margin-bottom: 5vh;
     }
 
     .services-section-righthand-text {
@@ -2135,7 +2135,7 @@ p {
 
     .image-holder-mobile {
         display: flex;
-        margin: 10dvh 0 8dvh 0;
+        margin: 10vh 0 8vh 0;
         padding: 0;
     }
 
@@ -2162,7 +2162,7 @@ p {
     #clients-section {
         padding-left: 0;
         padding-right: 0;
-        margin-bottom: 10dvh;
+        margin-bottom: 10vh;
     }
 
     .carousel {
@@ -2170,12 +2170,12 @@ p {
     }
 
     #locations-section {
-        margin-top: 10dvh;
+        margin-top: 10vh;
     }
 
     #clients-inner-container {
         min-width: auto;
-        padding: 10dvh 0 5dvh 0;
+        padding: 10vh 0 5vh 0;
         width: 95%;
     }
 
@@ -2189,15 +2189,15 @@ p {
 
     .contact-info-column {
         align-items: center;
-        margin-top: 2dvh;
+        margin-top: 2vh;
     }
 
     #regions {
-        margin-bottom: 2dvh;
+        margin-bottom: 2vh;
     }
 
     #copyright {
-        margin-bottom: 2dvh;
+        margin-bottom: 2vh;
     }
 
     .person-photo-div {
@@ -2257,7 +2257,7 @@ p {
     }
 
     #social-media-div {
-        margin-top: 2dvh;
+        margin-top: 2vh;
         justify-content: center;
     }
 
@@ -2272,7 +2272,7 @@ p {
 
     #first-page-content {
         margin-top: 0;
-        margin-bottom: 2dvh;
+        margin-bottom: 2vh;
     }
 
     .video-background {
@@ -2285,7 +2285,7 @@ p {
     }
     
     .title-text-top {
-        margin-top: 3dvh;
+        margin-top: 3vh;
         margin-right: 12vw;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     
@@ -2293,7 +2293,7 @@ p {
     
     .title-text-bottom {
         margin-left: 12vw;
-        margin-bottom: 3dvh;
+        margin-bottom: 3vh;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
     
@@ -2454,7 +2454,7 @@ p {
     }
 
     .person-card {
-        padding: 2.5dvh 0;
+        padding: 2.5vh 0;
     }
 
     .vagone-contact-info {
@@ -2493,7 +2493,7 @@ p {
 
     #copyright {
         font-size: clamp(16px, 4vw, 17.2px);
-        margin-bottom: 2dvh;
+        margin-bottom: 2vh;
     }
 
     .image-container {
