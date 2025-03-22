@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // progress tracker start
 
 function handlePCEventTracker() {
-  if (window.innerWidth > 768) {
     const sections = document.querySelectorAll(".section");
     const menuItems = document.querySelectorAll(".menu li");
     const menu = document.querySelector(".menu");
@@ -125,7 +124,6 @@ function updateActiveMenu() {
     // Update active menu on scroll
     window.addEventListener("scroll", updateActiveMenu);
       updateActiveMenu();
-    }
 }
 
 document.addEventListener("DOMContentLoaded", handlePCEventTracker);
