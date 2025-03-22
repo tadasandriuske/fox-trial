@@ -625,7 +625,7 @@ html, body {
     font-weight: 400;
     line-height: 1.2;
     color: #fff;
-    font-size: 4vw;
+    font-size: clamp(3rem, calc(var(--font-size-base) * 3.5), 3.5rem);
     text-align: left;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -634,24 +634,29 @@ html, body {
 
 .g {
     color: #a55e45 !important;
-    font-size: 2rem;
+    font-size: clamp(1.75rem, calc(var(--font-size-base) * 2), 2.25rem);
     letter-spacing: 0.1em !important;
-    font-weight: 600;
+    font-weight: 400;
     margin-bottom: 1%;
   }
+
+  .sub-g {
+    margin-left: 20px;
+  }
+
   .amp {
     font-family: "Playfair Display", serif;
-      font-size: 4rem;
+      font-size: clamp(4rem, calc(var(--font-size-base) * 5), 5rem);
       font-weight: 400;
       color: #a55e45 !important;
       z-index: -1;
       position: absolute;
-      margin-top: -3%;
+      margin-top: clamp(-3rem, calc(var(--font-size-base) * -3.5), -3.5rem);
   }
 
   .l {
-        margin-top: 1%;
-      margin-left: 10%;
+      margin-top: 1%;
+      margin-left: 40px;
   }
   
   #s-txt {
@@ -1023,7 +1028,7 @@ p {
     text-align: start;
 }
 
-.image-holder-mobile {
+.mobile-element {
     display: none;
 }
 
@@ -2033,23 +2038,35 @@ p {
       }
 
       .intro-holder {
-        height: 40%;
+        height: 50%;
         justify-content: end;
       }
 
       .soc-box {
         height: 40%;
         align-items: start;
+        padding-top: 5vw;
+        padding-right: 2vw;
       }
     
       .icon-start {
-        height: 18px;
+        height: 5.5vw;
       }
     
       .h-txt {
-        font-size: 18px;
-        text-align: center;
+        font-size: 7vw;
       }
+
+      .g {
+        font-size: 4.5vw;
+      }
+
+      .amp {
+        font-size: 10vw;
+        margin-top: -6vw;
+        margin-left: 5vw;
+      }
+
       .hide {
         display: none !important;
       }
@@ -2097,7 +2114,7 @@ p {
     }
 
     .consultations-row {
-        margin-bottom: 5vh;
+        margin-bottom: 0;
     }
 
     .services-section-righthand-text {
@@ -2133,15 +2150,23 @@ p {
         padding: 0 8vw 0 8vw;
     }
 
-    .image-holder-mobile {
+    .mobile-element {
         display: flex;
+    }
+
+    .image-holder-mobile {
         margin: 10vh 0 8vh 0;
         padding: 0;
     }
 
     #specialized-services-section {
-        width: 95%;
+        width: 100%;
         margin-bottom: 0;
+        padding: 0;
+    }
+
+    #specialized-services-text-div {
+        padding: 0 8vw 5vh 8vw;
     }
     
     #vagone-photo-div {
@@ -2323,8 +2348,15 @@ p {
         font-size: clamp(16px, 4.5vw, 19.35px);
     }
 
+    #specialized-services-title{
+        font-weight: 200;
+        text-align: start;
+        margin-bottom: 0;
+    }
+
     #specialized-services-subtitle {
         font-size: clamp(16px, 4.5vw, 19.35px);
+        text-align: justify;
     }
 
     p {

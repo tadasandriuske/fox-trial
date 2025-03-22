@@ -721,3 +721,26 @@ const posts = [
   document.addEventListener("DOMContentLoaded", generateCarousel, { passive: true });
   
   // instagram widget end
+
+  // specialized service image height regulator start
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const containers = document.querySelectorAll(".specialised-service-image-container");
+
+    if (containers.length === 0) return;
+
+    let minHeight = Infinity;
+
+    // Find the smallest container height
+    containers.forEach(container => {
+        minHeight = Math.min(minHeight, container.clientHeight);
+    });
+
+    // Apply the smallest height to all containers
+    containers.forEach(container => {
+        container.style.height = minHeight + "px";
+    });
+});
+
+
+  // specialized service image height regulator end
