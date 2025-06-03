@@ -1990,6 +1990,7 @@ p {
     #sand-color-section {
         padding: 0;
         padding-top: 6vh;
+        padding-bottom: 3vh;
     }
 
     #clients-inner-container {
@@ -2295,7 +2296,7 @@ p {
     #vagone-photo-div {
         position: relative;
         max-height: 300px;
-        max-width: 75%;
+        max-width: 80%;
         padding: 0;
     }
 
@@ -2509,11 +2510,11 @@ p {
     }
 
     #vagone-quote {
-        width: 85%;
+        width: 80%;
     }
 
     #vagone-info-inner-container {
-        max-width: 85%;
+        max-width: 80%;
     }
 
     .outer-content-window {
