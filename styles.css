@@ -1019,7 +1019,7 @@ p {
     justify-content: center;
     align-items: center;
     text-align: center; 
-    padding: 2vh 0;
+    padding: 2vh 0 0 0;
 }
 
 .separator-line {
@@ -1761,7 +1761,7 @@ p {
     justify-content: center;
     align-items: center;
     text-align: center; 
-    padding: 6vh 60px 6vh 30px;
+    padding: 6vh 60px 3vh 30px;
     margin-top: 10vh;
     position: relative;  /* Ensure the pseudo-element is positioned correctly */
 }
@@ -2017,6 +2017,8 @@ p {
     #quote-div-mobile {
         display: flex;
         margin-bottom: 3vh;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .services-section-lefthand-text {
@@ -2506,6 +2508,14 @@ p {
         margin: 0 15px;
     }
 
+    #vagone-quote {
+        width: 85%;
+    }
+
+    #vagone-info-inner-container {
+        max-width: 85%;
+    }
+
     .outer-content-window {
         box-shadow: none;
     }
@@ -2596,6 +2606,7 @@ p {
 
     #contact-section {
         margin-top: 0;
+        padding-right: 30px;
     }
 
     #contact-title {
