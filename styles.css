@@ -106,8 +106,8 @@ html, body {
 }
 
 .menu .circle-o {
-    width: 10px;
-    height: 10px;
+    width: 9px;
+    height: 9px;
     border-radius: 50%;
     background-color: white;
     display: inline-block;
@@ -141,6 +141,16 @@ html, body {
     }
     .menu:hover span {
         opacity: 0;
+    }
+    
+    .col-md-2 {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .col-md-10 {
+        max-width: 100%;
+        flex: 0 0 100%;
     }
 }
 /* progress tracker end */
@@ -438,7 +448,7 @@ html, body {
   }
   .ib {
     position: absolute;
-    background: url(files/media/stock/photo-2.jpg)
+    background: url(files/media/photos/photo-2.jpg)
       center center no-repeat;
     background-size: cover !important;
     height: 300px;
@@ -635,6 +645,7 @@ html, body {
     flex-direction: column;
     align-items: center;
     width: auto;
+    padding-left: 20px;
 }
 
 .h-txt {
@@ -667,14 +678,14 @@ html, body {
 
   .amp {
     display: flex;
-      font-family: "Libre Baskerville", serif;
-      font-size: clamp(4.5rem, calc(var(--font-size-base) * 4.5), 4.5rem);
-      font-weight: 400;
-      color: #a55e45 !important;
-      z-index: -1;
-      position: absolute;
-      margin-top: -3.2rem;
-      
+    font-family: "Libre Baskerville", serif;
+    font-size: clamp(4.5rem, calc(var(--font-size-base) * 4.5), 4.5rem);
+    font-weight: 400;
+    color: #a55e45 !important;
+    z-index: -1;
+    position: absolute;
+    margin-top: -3.2rem;
+    text-shadow: rgba(0, 0, 0, 0.25) 1px 1px 2px;
   }
 
   .l {
@@ -1023,7 +1034,7 @@ p {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 5vh;
+    padding: 30px 60px 30px 20px;
 }
 
 .coorporate-events-row {
@@ -1127,7 +1138,7 @@ p {
 
 #sand-color-section {
     background-color: #e2d8c5;
-    padding: 10vh 10vw;
+    padding: 30px 75px 30px 30px;
 }
 
 /* Initial state - hidden */
@@ -1162,7 +1173,7 @@ p {
     display: flex;
     flex-direction: column;
     margin-bottom: 10vh;
-    width: 70%;
+    width: 80%;
     padding: 5vh;
 }
 
@@ -1187,7 +1198,7 @@ p {
     left: 0;
     width: clamp(4rem, calc(var(--font-size-base) * 6), 6rem);
     height: clamp(4rem, calc(var(--font-size-base) * 6), 6rem);
-    background-image: url('files/media/stock/quotes.svg');
+    background-image: url('files/media/photos/quotes.svg');
     background-size: contain;
     background-repeat: no-repeat;
     opacity: 0.7;
@@ -1254,6 +1265,7 @@ p {
 
 #vagone-name-div {
     margin-bottom: 2vh;
+    padding-right: 30px;
 }
 
 #quote-div {
@@ -1286,7 +1298,7 @@ p {
     justify-content: center;
     align-items: center;
     text-align: center; 
-    padding: 2vw 2vw 0 2vw;
+    padding: 2vh 60px 0 30px;
 }
 
 #clients-title {
@@ -1328,7 +1340,7 @@ p {
 /*countries slider start*/
 
 #countries-slider-wrapper {
-    padding: 0 6vw 10vh 6vw;
+    padding: 0 100px 10vh 80px;
   }
 
   .slider-nav-wrapper {
@@ -1690,8 +1702,8 @@ p {
 
   .instagram-posts-item-image-icon-multiple svg,
   .instagram-posts-item-image-icon-video svg {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     fill: rgba(243, 240, 231, 0.8);
   }
 
@@ -1725,7 +1737,7 @@ p {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 20px;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0s 0.3s;
@@ -1749,7 +1761,7 @@ p {
     justify-content: center;
     align-items: center;
     text-align: center; 
-    padding: 6vh 2vw 2vw 2vw;
+    padding: 6vh 60px 6vh 30px;
     margin-top: 10vh;
     position: relative;  /* Ensure the pseudo-element is positioned correctly */
 }
@@ -1941,14 +1953,11 @@ p {
 }
 
 @media (max-width: 1400px) {    
-    #sand-color-section {
-        padding: 10vh 6vw;
-    }
 }
 
 @media (max-width: 1200px) {    
     #sand-color-section {
-        padding: 10vh 2vw;
+        padding: 30px 60px 30px 30px;
     }
 
     .services-section-lefthand-text {
@@ -1961,6 +1970,10 @@ p {
         position: absolute;
         width: 50vw;
         right: 60%;
+    }
+
+    #specialized-services-section {
+         width: 90%;
     }
 }
 
@@ -1975,6 +1988,7 @@ p {
     }
     
     #sand-color-section {
+        padding: 0;
         padding-top: 6vh;
     }
 
@@ -2039,7 +2053,7 @@ p {
     }
   }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .menu {
         display: none;
     }
@@ -2115,6 +2129,10 @@ p {
         width: auto;
     }
 
+    .intro-text-holder {
+        padding-left: 0;
+    }
+
     .intro-text-holder-inner {
         margin-left: 2vw;
     }
@@ -2177,6 +2195,10 @@ p {
 
     .specialised-service-image-container {
         height: 60px;
+    }
+
+    #services-section-inner {
+        padding-right: 20px;
     }
     
     .specialised-service-text {
@@ -2262,6 +2284,11 @@ p {
     #specialized-services-text-div {
         padding: 0 8vw 5vh 8vw;
     }
+
+    #vagone-name-div {
+    margin-bottom: 2vh;
+    padding-right: 15px;
+}
     
     #vagone-photo-div {
         position: relative;

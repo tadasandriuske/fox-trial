@@ -7,6 +7,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // progress tracker start
 
+function scaleMenu() {
+  const baseHeight = 692; // your design height
+  const vh = window.innerHeight;
+
+  // Scale based on height only (taller screen = larger scale)
+  const scaleRatio = vh / baseHeight;
+
+  if (scaleRatio <= 1) return;
+
+  const menu = document.querySelector('.menu');
+  if (menu) {
+    menu.style.transform = `translate(-50%, -50%) scale(${scaleRatio})`;
+    menu.style.transformOrigin = 'center right';
+  }
+}
+
+window.addEventListener('resize', scaleMenu);
+window.addEventListener('load', scaleMenu);
+
 function handlePCEventTracker() {
     const sections = document.querySelectorAll(".section");
     const menuItems = document.querySelectorAll(".menu li");
@@ -524,97 +543,145 @@ handleIcons(tabsBox.scrollLeft);
 
 const posts = [
     {
-      "image": "files/media/events/event-photo-1.jpg",
+      "image": "files/media/insta/event-photo-24.jpg",
+      "post-link": "https://www.instagram.com/p/DG0Ivratpe3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "description": "Still buzzing from an unforgettable night! ✨ Huge thanks to everyone who made this event so special!",
+      "type": "multiple"
+    },
+    {
+      "image": "files/media/insta/event-photo-23.jpg",
+      "post-link": "https://www.instagram.com/p/DG0Ivratpe3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "description": "Still buzzing from an unforgettable night! ✨ Huge thanks to everyone who made this event so special!",
+      "type": "multiple"
+    },
+    {
+      "image": "files/media/insta/event-photo-22.jpg",
+      "post-link": "https://www.instagram.com/p/DG0Ivratpe3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "description": "Still buzzing from an unforgettable night! ✨ Huge thanks to everyone who made this event so special!",
+      "type": "multiple"
+    },
+    {
+      "image": "files/media/insta/event-photo-21.jpg",
+      "post-link": "https://www.instagram.com/p/DG0Ivratpe3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "description": "Still buzzing from an unforgettable night! ✨ Huge thanks to everyone who made this event so special!",
+      "type": "multiple"
+    },
+    {
+      "image": "files/media/insta/event-photo-20.jpg",
+      "post-link": "https://www.instagram.com/p/DG54r0_NYKn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "description": "Party to remember. GVG forever!",
+      "type": "multiple"
+    },
+    {
+      "image": "files/media/insta/event-photo-19.jpg",
+      "post-link": "https://www.instagram.com/p/DIl4ahlsEBj/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "description": "ĮMONĖS RENGINIO DEKORAS 🤍",
+      "type": "multiple"
+    },
+    {
+      "image": "files/media/insta/event-photo-17.jpg",
+      "post-link": "https://www.instagram.com/reel/DGsO_MctqEn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "description": "Cheers to 40 years, GVG! This was party to remember!",
+      "type": "video"
+    },
+    {
+      "image": "files/media/insta/event-photo-18.jpg",
+      "post-link": "https://www.instagram.com/p/DJs7tVXI7fa/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "description": "Client didn’t want ordinary. We listened. So we dipped everything in pink — with a help from the master, @flowercouturebymp_official. We flipped one of Vilnius’ trendiest spots and turned it into all-pink-everything, with a touch of silver. It was fun. And one to remember.",
+      "type": "multiple"
+    },
+    {
+      "image": "files/media/insta/event-photo-1.jpg",
       "post-link": "https://www.instagram.com/p/DDtnWpltGrT/?utm_source=ig_web_copy_link",
       "description": "Summer vibes with the amazing decorators behind LRT’s new season shows.",
       "type": "multiple"
     },
     {
-      "image": "files/media/events/event-photo-2.jpg",
+      "image": "files/media/insta/event-photo-2.jpg",
       "post-link": "https://www.instagram.com/p/C9xVZBft9vC/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       "description": "See you at the winter party, guys!",
       "type": "multiple"
     },
     {
-      "image": "files/media/events/event-photo-3.jpg",
+      "image": "files/media/insta/event-photo-3.jpg",
       "post-link": "https://www.instagram.com/p/C9xVZBft9vC/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       "description": "See you at the winter party, guys!",
       "type": "multiple"
     },
     {
-      "image": "files/media/events/event-photo-4.jpg",
+      "image": "files/media/insta/event-photo-4.jpg",
       "post-link": "https://www.instagram.com/p/C9iFX8-NACA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       "description": "Another flashback to Ploom's unforgettable birthday celebration in Vilnius!",
       "type": "multiple"
     },
     {
-      "image": "files/media/events/event-photo-5.jpg",
+      "image": "files/media/insta/event-photo-5.jpg",
       "post-link": "https://www.instagram.com/p/C9iFX8-NACA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       "description": "Another flashback to Ploom's unforgettable birthday celebration in Vilnius!",
       "type": "multiple"
     },
     {
-      "image": "files/media/events/event-photo-6.jpg",
+      "image": "files/media/insta/event-photo-6.jpg",
       "post-link": "https://www.instagram.com/p/DC9CgdZt_IT/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       "description": "Just a little sneak peek from yesterday’s private event at Marbella Club. Such a beautiful night with amazing vibes and attention to every detail. Thanks to all.",
       "type": "multiple"
     },
     {
-      "image": "files/media/events/event-photo-7.jpg",
+      "image": "files/media/insta/event-photo-7.jpg",
       "post-link": "https://www.instagram.com/p/C8j5laeK04Q/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       "description": "Another day in the World of event magic✨ Big shoutout to the perfect clients who trust us with their visions! And to the incredible team behind the scenes – your dedication and hard work are the real magic wands. Together, we make every event a blast!",
       "type": "multiple"
     },
     {
-      "image": "files/media/events/event-photo-8.jpg",
+      "image": "files/media/insta/event-photo-8.jpg",
       "post-link": "https://www.instagram.com/p/DDt8se0t8IJ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       "description": "A wonderful evening celebrating the holiday season! For 8 years, we've been honored to create two events each season for this amazing client. Grateful for the trust and partnership!",
       "type": "multiple"
     },
     {
-      "image": "files/media/events/event-photo-9.jpg",
+      "image": "files/media/insta/event-photo-9.jpg",
       "post-link": "https://www.instagram.com/p/DDt8se0t8IJ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       "description": "A wonderful evening celebrating the holiday season! For 8 years, we've been honored to create two events each season for this amazing client. Grateful for the trust and partnership!",
       "type": "multiple"
     },
     {
-      "image": "files/media/events/event-photo-10.jpg",
+      "image": "files/media/insta/event-photo-10.jpg",
       "post-link": "https://www.instagram.com/p/DEIRdfONZyS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       "description": "Throwing it back to an unforgettable private event – an amazing performance that still feels like yesterday.",
       "type": "multiple"
     },
     {
-      "image": "files/media/events/event-photo-11.jpg",
+      "image": "files/media/insta/event-photo-11.jpg",
       "post-link": "https://www.instagram.com/p/C9iFX8-NACA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       "description": "Another flashback to Ploom's unforgettable birthday celebration in Vilnius!",
       "type": "multiple"
     },
     {
-      "image": "files/media/events/event-photo-12.jpg",
+      "image": "files/media/insta/event-photo-12.jpg",
       "post-link": "https://www.instagram.com/p/C9upVG0NHR-/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       "description": "Amazing time hosting our client's company summer party with families! The weather was perfect, and the moments were unforgettable. Our incredible team set up the entire venue in just 2 hours!",
       "type": "multiple"
     },
     {
-      "image": "files/media/events/event-photo-13.jpg",
+      "image": "files/media/insta/event-photo-13.jpg",
       "post-link": "https://www.instagram.com/p/C9wM8drNGEx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       "description": "Celebrating more highlights from our client's incredible summer party. Today we're shining a spotlight on the amazing individuals who made the event so memorable.",
       "type": "multiple"
     },
     {
-      "image": "files/media/events/event-photo-14.jpg",
+      "image": "files/media/insta/event-photo-14.jpg",
       "post-link": "https://www.instagram.com/p/DAwOGcfNdWq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       "description": "A date with an OCTOPUS!",
       "type": "multiple"
     },
     {
-      "image": "files/media/events/event-photo-15.jpg",
+      "image": "files/media/insta/event-photo-15.jpg",
       "post-link": "https://www.instagram.com/p/DC9CgdZt_IT/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       "description": "Just a little sneak peek from yesterday’s private event at Marbella Club. Such a beautiful night with amazing vibes and attention to every detail. Thanks to all.",
       "type": "multiple"
     },
     {
-      "image": "files/media/events/event-photo-16.jpg",
+      "image": "files/media/insta/event-photo-16.jpg",
       "post-link": "https://www.instagram.com/p/C9iFX8-NACA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       "description": "Another flashback to Ploom's unforgettable birthday celebration in Vilnius!",
       "type": "multiple"
@@ -688,7 +755,16 @@ const posts = [
                                 <path d="M0,4.102l0,28.355c0,2.241,1.814,4.067,4.051,4.067h28.365c2.237,0,4.066-1.826,4.066-4.067l0-28.356c0-2.238-1.828-4.051-4.066-4.051H4.051C1.814,0.05,0,1.862,0,4.102z"></path>
                               </svg>`;
             imgContainer.appendChild(icon);
+          } else if (posts[imgIndex]["type"] === "video") {
+            const icon = document.createElement("span");
+            icon.classList.add("instagram-posts-item-image-icon-video");
+            icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                              <path d="M13.34 4.13L20.26 16H4v-1C4 9.48 8.05 4.92 13.34 4.13zM33.26 16L22.57 16 15.57 4 26.26 4zM46 15v1H35.57l-7-12H35C41.08 4 46 8.92 46 15zM4 18v17c0 6.08 4.92 11 11 11h20c6.08 0 11-4.92 11-11V18H4zM31 32.19l-7.99 4.54C21.68 37.49 20 36.55 20 35.04v-9.08c0-1.51 1.68-2.45 3.01-1.69L31 28.81C32.33 29.56 32.33 31.44 31 32.19z"></path>
+                              </svg>`;
+            imgContainer.appendChild(icon);
           }
+
+          
   
           anchor.appendChild(img);
           anchor.appendChild(description);
