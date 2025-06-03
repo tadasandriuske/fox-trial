@@ -1737,7 +1737,7 @@ p {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 20px;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0s 0.3s;
