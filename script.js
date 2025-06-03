@@ -543,9 +543,9 @@ handleIcons(tabsBox.scrollLeft);
 
 const posts = [
     {
-      "image": "files/media/insta/event-photo-24.jpg",
-      "post-link": "https://www.instagram.com/p/DG0Ivratpe3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-      "description": "Still buzzing from an unforgettable night! ✨ Huge thanks to everyone who made this event so special!",
+      "image": "files/media/insta/event-photo-10.jpg",
+      "post-link": "https://www.instagram.com/p/DEIRdfONZyS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "description": "Throwing it back to an unforgettable private event – an amazing performance that still feels like yesterday.",
       "type": "multiple"
     },
     {
@@ -559,6 +559,12 @@ const posts = [
       "post-link": "https://www.instagram.com/p/DG0Ivratpe3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       "description": "Still buzzing from an unforgettable night! ✨ Huge thanks to everyone who made this event so special!",
       "type": "multiple"
+    },
+    {
+      "image": "files/media/insta/event-photo-17.jpg",
+      "post-link": "https://www.instagram.com/reel/DGsO_MctqEn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "description": "Cheers to 40 years, GVG! This was party to remember!",
+      "type": "video"
     },
     {
       "image": "files/media/insta/event-photo-21.jpg",
@@ -579,10 +585,10 @@ const posts = [
       "type": "multiple"
     },
     {
-      "image": "files/media/insta/event-photo-17.jpg",
-      "post-link": "https://www.instagram.com/reel/DGsO_MctqEn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-      "description": "Cheers to 40 years, GVG! This was party to remember!",
-      "type": "video"
+      "image": "files/media/insta/event-photo-24.jpg",
+      "post-link": "https://www.instagram.com/p/DG0Ivratpe3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "description": "Still buzzing from an unforgettable night! ✨ Huge thanks to everyone who made this event so special!",
+      "type": "multiple"
     },
     {
       "image": "files/media/insta/event-photo-18.jpg",
@@ -642,12 +648,6 @@ const posts = [
       "image": "files/media/insta/event-photo-9.jpg",
       "post-link": "https://www.instagram.com/p/DDt8se0t8IJ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       "description": "A wonderful evening celebrating the holiday season! For 8 years, we've been honored to create two events each season for this amazing client. Grateful for the trust and partnership!",
-      "type": "multiple"
-    },
-    {
-      "image": "files/media/insta/event-photo-10.jpg",
-      "post-link": "https://www.instagram.com/p/DEIRdfONZyS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-      "description": "Throwing it back to an unforgettable private event – an amazing performance that still feels like yesterday.",
       "type": "multiple"
     },
     {
