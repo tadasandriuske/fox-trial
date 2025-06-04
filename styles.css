@@ -1059,7 +1059,7 @@ p {
     right: 100%;
     z-index: 2;
     padding: 25px;
-    background-color: #ded2bc;
+    background-color: rgba(222, 210, 188, 0.9);
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -1106,7 +1106,7 @@ p {
     left: 100%;
     z-index: 2;
     padding: 25px;
-    background-color: #ded2bc;
+    background-color: rgba(222, 210, 188, 0.9);
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
