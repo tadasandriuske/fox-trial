@@ -1223,11 +1223,8 @@ p {
 
 #vagone-socials {
     position: absolute;
-    left: 0;
-    bottom: 0;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    margin-left: 2vh;
+    left: 20px;
+    bottom: 20px;
 }
 
 #vagone-socials a {
@@ -1285,6 +1282,16 @@ p {
     text-align: center; 
     overflow: hidden;
     max-height: 500px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#vagone-photo-div-inner {
+    display: flex;
+    position: relative;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 #vagone-image {
